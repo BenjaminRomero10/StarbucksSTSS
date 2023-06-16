@@ -1,0 +1,378 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Madurai&display=swap');
+
+:root{
+    --starbucks-green: #006241;
+    --starbucks-house: #1e3932;
+    --border: #ccc;
+    --font: 'Secular One', sans-serif;
+    --font2: 'Hind Madurai', sans-serif;
+    --text-color: #1E3932;
+    --button-color: var(--starbucks-green);
+    --button-hover: #0B7E53;
+    --button-font: 'Hind Madurai', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+    font-size: 1.1rem;
+}
+
+/* HEADER */
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 5px solid var(--starbucks-house);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo img{
+    max-width: 75px;
+    height: auto;
+}
+
+header ul{
+    display: inline-flex;
+    gap: 52px;
+}
+
+li{
+    list-style-type: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+li a:hover{
+    color: var(--starbucks-green)
+}
+
+/* CONTENT INDEX */
+
+.indexContent{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.indexContent img{
+    max-width: 100%;
+    height: auto;
+    filter: blur(6px);
+    
+}
+
+.indexText{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.indexText p{
+    color: #fff;
+    text-shadow: 1px 1px 1px black;
+}
+
+.indexText .title{
+    font-size: 5rem;
+}
+
+.indexButton {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--button-color);
+    color: #fff;
+    padding: 0.8rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--button-font);
+}
+
+.indexButton:hover{
+    background-color: var(--button-hover);
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+  
+/* FOOTER */
+
+footer{
+    border-top: 1px solid var(--border);
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.footerImage{
+    text-align: center;
+}
+
+footer img{
+    max-width: 50px;
+    height: auto;
+    margin: 1rem;
+}
+
+.footerContent{
+    display: flex;
+    justify-content: space-around;
+}
+
+.aboutUs, .contact, .terms, .aboutUs ul, .contact ul, .terms ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.aboutUs a, .terms a, .contact a {
+    font-size: 0.8rem;
+}
+
+.social{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+    margin: 1rem 0;
+}
+
+.buttons{
+    display: flex;
+    gap: 1rem;
+}
+
+.copy {
+    font-size: 0.8rem;
+}
+
+/* INICIAR SESION */
+
+.logInContent{
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    padding: 5px 0px;
+}
+
+.logInContent img{
+    max-width: 100%;
+    height: auto;
+}
+
+.logInForm {
+    border: 1px solid var(--border);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.logInForm h2{
+    font-size: 2rem;
+}
+
+.logInForm img{
+    max-width: 150px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    border-bottom: 2px solid #1E3932;
+    margin: 30px 0;
+    text-align: start;
+}
+
+.inputBox input{
+    margin-top: 0.3rem;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-family: var(--font2);
+}
+
+.rememberForgot{
+    display: flex;
+    flex-direction: column;
+}
+
+.remember{
+    display: flex;
+    justify-content:flex-start;
+    gap: 5px;
+}
+.rememberForgot label{
+    text-align: start;
+}
+
+.rememberForgot a{
+    color: var(--starbucks-green);
+    margin: 1rem;
+}
+
+.rememberForgot a:hover{
+    color: var(--button-hover);
+}
+
+#logInCheck{
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: white;
+    border: 1px solid black;
+    width: 26px;
+    height: 27px;
+    border-radius: 5px;
+}
+
+#logInCheck:checked {
+    background-color: var(--starbucks-green);
+    background-image: url(../source/img/coffeeIcon.png);
+}
+
+.logInButton{
+    color: white;
+    margin: 5px 23px;
+    width: 350px;
+    height: 45px;
+    background-color: var(--starbucks-green);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.logInButton:hover{
+    background-color: var(--button-hover);
+}
+
+/* INVENTARIO */
+
+.filters{
+    border-bottom: 1px solid var(--border);
+    padding: 10px 0px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.filters a{
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+.filters a:hover{
+    color: var(--starbucks-green);
+}
+
+.selected {
+    border-bottom: 5px solid #1E3932;
+}
+
+.inventoryContent{
+    padding: 0 1rem;
+}
+
+section{
+    color: var(--starbucks-house);
+    border: 1px solid var(--border);
+    border-radius: 10px 0px;
+    margin: 1rem 0;
+}
+
+section h2{
+    margin: 0.3rem 0 0 0.5rem;
+}
+
+.item{
+    margin: 1rem;
+}
+
+.itemTitle{
+    margin-bottom: 0.5rem;
+}
+
+.itemContent{
+    display: grid;
+    grid-template-areas: 
+        "img button1 button2 count"
+        "img button3 button3 count";
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+.img{
+    grid-area: img;
+    background-color: #ccc;
+    height: 100px;
+    width: 100px;
+    align-self: center;
+    justify-self: center;
+}
+
+.itemContent button{
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.itemContent button:hover{
+    background-color: #e7e7e7;
+}
+
+.button1{
+    grid-area: button1;
+}
+
+.button2{
+    grid-area: button2;
+}
+
+.button3{
+    grid-area: button3;
+}
+
+.count{
+    grid-area: count;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.count p{
+    color: var(--starbucks-house);
+    font-size: 2.5rem;
+    border-bottom: 5px solid var(--starbucks-house);
+}
+
+/* RESPONSIVE */
+
+@media only screen and (width <= 768px) {
+    *{
+        font-size: 1rem;
+    }
+    .indexText .title{
+        font-size: 3rem;
+    }
+  }
