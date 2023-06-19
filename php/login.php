@@ -21,8 +21,8 @@
 
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
-        header('Location: ../index.html');
-        echo '<script>
+        $js_code = 
+        '<script>
             Toastify({
                 text: "Inicio de sesión realizado",
                 duration: 3000,
@@ -36,6 +36,10 @@
                 }
             ).showToast();
         </script>';
+        
+        file_put_contents('../index.html', $js_code, FILE_APPEND);
+
+        header('Location: ../index.html');
     } else {
         echo 'Login Incorrecto';
     }
