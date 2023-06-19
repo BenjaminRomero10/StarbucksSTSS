@@ -21,7 +21,7 @@
 
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
-        echo 'Login Correcto';
+        header('Location: ../index.html');
     } else {
         echo 'Login Incorrecto';
     }
