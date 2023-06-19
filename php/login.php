@@ -20,7 +20,7 @@
     if ($getResults == FALSE) echo (sqlsrv_errors());
 
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
-    if ($row['Nombre'] == $user && $row['Contra'] == $pass){
+    if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
         echo 'Login Correcto';
     } else {
         echo 'Login Incorrecto';
