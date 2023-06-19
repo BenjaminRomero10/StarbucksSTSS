@@ -32,14 +32,18 @@
                 stopOnFocus: true,
                 style: {
                     color: "white",
-                    border "2px solid white"
+                    border: "2px solid white"
                 }
             ).showToast();
         </script>';
         
-        file_put_contents('../index.html', $js_code, FILE_APPEND);
+        $html_code = file_get_contents('../index.html');
+        $html_code = str_replace('</body>', $js_code . '</body>', $html_code);
+        $html_code = str_replace('</html>', '</html>', $html_code);
+        file_put_contents('../index.html', $html_code);
 
         header('Location: ../index.html');
+        exit;
     } else {
         echo 'Login Incorrecto';
     }
