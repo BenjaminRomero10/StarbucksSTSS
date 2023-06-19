@@ -22,6 +22,22 @@
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
         header('Location: ../index.html');
+        echo '<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>';
+        echo '<script>
+            Toastify({
+                text: "Inicio de sesión realizado",
+                duration: 3000,
+                close: true,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#1e3932",
+                stopOnFocus: true
+                style: {
+                    color: "white",
+                    border "2px solid white"
+                }
+            ).showToast();
+        </script>';
     } else {
         echo 'Login Incorrecto';
     }
