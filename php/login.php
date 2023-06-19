@@ -14,17 +14,19 @@
         die(print_r(sqlsrv_errors(), true));
     }
 
-    echo("Credenciales: " . $user . " " . $pass . "<br/>");
-
     $tsql= "EXEC ObtenerContraseña" . "'" . $user . "';";
     $getResults= sqlsrv_query($conn, $tsql);
 
-    if ($getResults == FALSE)
-        echo (sqlsrv_errors());
+    if ($getResults == FALSE) echo (sqlsrv_errors());
 
-    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
-        echo ($row['Nombre'] . " " . $row['Contra'] . "<br/>");
+    $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
+    if ($row['Nombre'] == $user && $row['Contra'] == $pass){
+        echo 'Login Correcto';
+    } else {
+        echo 'Login Incorrecto';
     }
+
     sqlsrv_free_stmt($getResults);
+    sqlsrv_close($conn);
 ?>
 
