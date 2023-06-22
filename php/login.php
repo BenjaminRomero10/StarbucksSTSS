@@ -22,15 +22,11 @@
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
         // CODIGO INICIO SESION
-        session_start();
-        echo "El identificador de la sesión actual es: " . session_id();
-
-        session_regenerate_id();
-        echo "El nuevo identificador de la sesión actual es: " . session_id();
+        echo json_encode(["status" => "ok", "session_id" => session_id()]);
         // header('Location: ../index.html');
         // exit;
     } else {
-        echo 'Login Incorrecto';
+        echo json_encode(["status" => "error", "message" => "Usuario o contraseña incorrectos"]);
     }
 
     sqlsrv_free_stmt($getResults);
