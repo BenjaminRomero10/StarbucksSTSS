@@ -14,36 +14,21 @@
         die(print_r(sqlsrv_errors(), true));
     }
 
-    $tsql= "EXEC ObtenerContraseña" . "'" . $user . "';";
+    $tsql= "EXEC ObtenerContraseña" . "'" . $user . "';";  
     $getResults= sqlsrv_query($conn, $tsql);
 
     if ($getResults == FALSE) echo (sqlsrv_errors());
 
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
-        $js_code = 
-        '<script>
-            Toastify({
-                text: "Inicio de sesión realizado",
-                duration: 3000,
-                gravity: "top",
-                position: "right",
-                backgroundColor: "#1e3932",
-                stopOnFocus: true,
-                style: {
-                    color: "white",
-                    border: "2px solid white"
-                }
-            ).showToast();
-        </script>';
-        
-        $html_code = file_get_contents('../index.html');
-        $html_code = str_replace('</body>', $js_code . '</body>', $html_code);
-        $html_code = str_replace('</html>', '</html>', $html_code);
-        file_put_contents('../index.html', $html_code);
+        // CODIGO INICIO SESION
+        session_start();
+        echo "El identificador de la sesión actual es: " . session_id();
 
-        header('Location: ../index.html');
-        exit;
+        session_id("nuevo_id");
+        echo "El nuevo identificador de la sesión actual es: " . session_id();
+        // header('Location: ../index.html');
+        // exit;
     } else {
         echo 'Login Incorrecto';
     }
