@@ -25,7 +25,7 @@
         session_start();
         echo "El identificador de la sesión actual es: " . session_id();
 
-        session_id("nuevo_id");
+        session_regenerate_id();
         echo "El nuevo identificador de la sesión actual es: " . session_id();
         // header('Location: ../index.html');
         // exit;
