@@ -23,11 +23,11 @@
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
         // CODIGO INICIO SESION
         session_start();
-        echo json_encode(["status" => "ok", "session_id" => session_id()]);
+        json_encode(["status" => "ok", "session_id" => session_id()]);
         // header('Location: ../index.html');
         // exit;
     } else {
-        echo json_encode(["status" => "error", "message" => "Usuario o contraseña incorrectos"]);
+        json_encode(["status" => "error", "message" => "Usuario o contraseña incorrectos"]);
     }
 
     sqlsrv_free_stmt($getResults);
