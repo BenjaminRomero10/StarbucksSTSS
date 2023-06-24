@@ -22,11 +22,12 @@
 
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
-        if(isset($_POST['remember']) && $_POST['remember'] == 1){
-            setcookie('user', $user, strtotime("+1 week"));
-            setcookie("expiry", strtotime("+1 week"), strtotime("+1 week"));
-            setcookie("firstTime", "true");
-        }
+        echo "<form id='hidden-form' action='../index.html' method='post'>";
+        echo "<input type='hidden' name='user' value='$user'>";
+        echo "<input type='submit' value='Iniciar sesión'>";
+        echo "</form>";
+        //usar javascript para hacer click en el botón de submit automáticamente
+        echo "<script>document.getElementById('hidden-form').submit();</script>";
 
         header('Location: ../index.html');
     } else {
