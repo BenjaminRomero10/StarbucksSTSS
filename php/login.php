@@ -24,10 +24,10 @@
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
         
         $_SESSION["user"] = $user;
-        header('Location: ../index.php');
+        header('Location: ../index.html');
     } else {
         $SESSION["user"] = null;
-        header('Location: ../index.php');
+        header('Location: ../index.html');
     }
 
     sqlsrv_free_stmt($getResults);
