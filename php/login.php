@@ -1,4 +1,5 @@
 <?php
+    session_start();
     $user = $_POST ['user'];
     $pass = $_POST ['pass'];
     $serverName = "stss.database.windows.net";
@@ -21,11 +22,11 @@
 
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
-        session_start();
-        $_SESSION['user'] = $user;
+        
+        $_SESSION["user"] = $user;
         header('Location: ../index.html');
     } else {
-        $SESSION['user'] = null;
+        $SESSION["user"] = null;
         header('Location: ../index.html');
     }
 
