@@ -366,6 +366,145 @@ section h2{
     border-bottom: 5px solid var(--starbucks-house);
 }
 
+/* QUIENES SOMOS */
+
+.quienesSomos{
+    padding: 5%;
+ }
+ .quienesSomos h1{
+    padding: 1%;
+    font-size: 35px;
+    text-align: center;
+ }
+ .quienesSomos h2{
+    font-weight: lighter;
+    text-align: justify;
+ }
+ .quienesSomos h3{
+    font-size: 28px;
+    font-weight: bolder;
+    color: #1E3932;
+ }
+ .quienesSomos h4{
+    text-align: justify;
+    font-weight: lighter;
+ }
+ 
+ .figuras{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+ }
+ figure img {
+    object-position: 0%;
+    max-width: 250px;
+    height: auto;
+    border: 1px solid #000000;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+ }
+ figcaption{
+    display: block;
+    font-weight: 100;
+    font-size: 18px;
+    text-align: center;
+ }
+ .upc img{
+    display: block;
+    margin: 0 auto;
+    width: 30%;
+ }
+
+/* MISION */
+
+.mision{
+    justify-content: space-between;
+    text-align: center;
+    margin: 50px;
+}
+.mision h1{
+    padding: 1%;
+    font-size: 40px;
+}
+.mision h2{
+    display: block;
+    color: #1E3932;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 30px;
+    padding: 70px;
+    margin: 30px;
+    background-color: azure;
+    border: 1px solid black;
+}
+.mision h3{
+    text-align: justify;
+    font-weight: 10;
+}
+
+/* VISION */
+
+.vision{
+    justify-content: space-between;
+    text-align: center;
+    margin: 50px; 
+}
+.vision h1{
+    padding: 1%;
+    font-size: 40px;
+}
+.vision h2{
+    display: block;
+    color: #1E3932;
+    font-weight: lighter;
+    text-align: center;
+    font-size: 30px;
+    padding: 70px;
+    margin: 30px;
+    background-color: azure;
+    border: 1px solid black;
+}
+.Indicador{
+    display: flex;
+    padding-left: 90px;
+    width: max-content;
+}
+.Indicador ul a{
+    color: gray;
+    list-style: none;
+    font-size: 15px;
+    background: transparent;
+}
+.muestra{
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    height: 400px;
+    width: 400px;
+    background: url(/source/img/World.png);
+    background-size: cover;
+    box-shadow: inset 8 7 20px #000000,
+                inset 40px -10px 20px rgba(0, 0, 0, 0.3)
+                ;
+    animation: wolrd 5s linear infinite;
+}
+  
+@keyframes wolrd {
+    0% {
+      background-position-x: 0; 
+    }
+    100% {
+      background-position-x: 800px;
+    }
+}
+.muestra img{
+    width: 220px;
+    position: relative;
+    top: 50%;
+    left: 1%;   
+}
+
 /* RESPONSIVE */
 
 @media only screen and (width <= 768px) {

@@ -21,13 +21,10 @@
 
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
-        // CODIGO INICIO SESION
         session_start();
-        json_encode(["status" => "ok", "session_id" => session_id()]);
-        // header('Location: ../index.html');
-        // exit;
+        // CODIGO INICIO SESION
+
     } else {
-        json_encode(["status" => "error", "message" => "Usuario o contraseña incorrectos"]);
     }
 
     sqlsrv_free_stmt($getResults);

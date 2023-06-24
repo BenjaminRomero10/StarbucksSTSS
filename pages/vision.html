@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starbucks STSS</title>
     <link href="https://www.starbucks.pe/Multimedia/logo/favicon.ico" rel="shortcut icon" type="image/x-icon">
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
     <script src="https://kit.fontawesome.com/ab4da2f3ac.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 <body>
@@ -16,35 +15,27 @@
             <a href="../index.html"><img src="../source/img/Logo.png" alt="logo"></a>
         </div>
     </header>
-    <div class="logInContent">
-        <img src="../source/img/banner2.jpg" alt="indexBanner">
-        <div class="logInForm">
-            <img src="../source/img/stssbanner.png" alt="stssBanner">
-            <form name="login" method="POST" id="formulario-login">
-                <div class="inputBox">
-                    <label for="user">USUARIO</label>
-                    <input type="username" id="user" name="user" autocomplete="off" required>
-                    
-                </div>
-                <div class="inputBox">
-                    <label for="pass">CONTRASEÑA</label>
-                    <input type="password" id="pass" name="pass" required>
-                    
-                </div>
-                <div class="rememberForgot">
-                    <div class="remember">
-                        <input type="checkbox" id="logInCheck"> 
-                        <label for="logInCheck">Recuerdame</label>
-                    </div>
-                    <a href="#">¿Olvidaste tu contraseña?</a>
-                </div>
-                <button type="submit" class="logInButton" value="iniciarSesion">INICIAR SESION</button>
-            </form>
-            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-            <script src="../js/login.js"></script>
-        </div>
-
+    <div class="Indicador">
+        <ul class="s">
+            <a href="/">STSS-</a>
+        </ul>
+        <ul class="t">
+            <a href="#">Nuestra Visión</a>
+        </ul>
     </div>
+    <div class="vision">
+        <p>
+            <h1>NUESTRA VISIÓN</h1>
+            <h2>Ser la empresa líder de automatización de control de stock y suministros de todas las sucursales de Starbucks a nivel global</h2>
+        </p>        
+    </div>
+    <div class="muestra">
+        <img src="/source/img/14.png" alt="pers">
+    </div>
+    
+    <br>
+    <br>
+
     <footer>
         <div class="footerImage">
             <img src="../source/img/Logo.png" alt="footerLogo">
@@ -60,9 +51,9 @@
             <div class="aboutUs">
                 <p class="title">SOBRE NOSOTROS</p>
                 <ul>
-                    <li><a href="quienesSomos.html">QUIENES SOMOS</a></li>
-                    <li><a href="mision.html">NUESTRA MISION</a></li>
-                    <li><a href="vision.html">NUESTRA VISION</a></li>
+                    <li><a href="/pages/quienesSomos.html">QUIENES SOMOS</a></li>
+                    <li><a href="/pages/mision.html">NUESTRA MISION</a></li>
+                    <li><a href="/pages/vision.html">NUESTRA VISION</a></li>
                 </ul>
             </div>
             <div class="contact">
