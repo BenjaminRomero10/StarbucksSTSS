@@ -22,17 +22,10 @@
 
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
-        echo "<form id='hidden-form' action='../index.html' method='post'>";
-        echo "<input type='hidden' name='user' value='$user'>";
-        echo "<input type='submit' value='Iniciar sesión'>";
-        echo "</form>";
-        //usar javascript para hacer click en el botón de submit automáticamente
-        echo "<script>document.getElementById('hidden-form').submit();</script>";
 
         header('Location: ../index.html');
     } else {
-        $SESSION["user"] = null;
-        header('Location: ../index.html');
+
     }
 
     sqlsrv_free_stmt($getResults);
