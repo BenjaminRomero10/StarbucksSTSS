@@ -22,8 +22,12 @@
 
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
-        
-        setcookie('user', $user, time() + 3600);
+        if(isset($_POST['remember']) && $_POST['remember'] == 1){
+            setcookie('user', $user, strtotime("+1 week"));
+            setcookie("expiry", strtotime("+1 week"), strtotime("+1 week"));
+            setcookie("firstTime", "true");
+        }
+
         header('Location: ../index.html');
     } else {
         $SESSION["user"] = null;
