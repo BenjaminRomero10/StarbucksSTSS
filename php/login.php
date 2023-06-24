@@ -22,7 +22,8 @@
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
         session_start();
-        // CODIGO INICIO SESION
+        $_SESSION['user'] = $user;
+        header('Location: ../index.html');
 
     } else {
     }
