@@ -1,5 +1,6 @@
 window.onload = function(){
     let user = sessionStorage.getItem('user');
+    console.log(user);
     
     if(user != null){
         Toastify({
