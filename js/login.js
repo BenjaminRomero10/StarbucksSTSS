@@ -1,4 +1,8 @@
 window.onload = function(){
+
+    let user = sessionStorage.getItem('user');
+
+    if(user != null){
         Toastify({
             text: "Bienvenido, has iniciado sesión correctamente.",
             duration: 3000,
@@ -8,4 +12,6 @@ window.onload = function(){
             backgroundColor: "#1e3932",
             stopOnFocus: true,
         }).showToast();
+    }
+    
 }
