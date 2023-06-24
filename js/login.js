@@ -1,8 +1,5 @@
 window.onload = function(){
 
-    let user = sessionStorage.getItem('user');
-    console.log(user);
-
     Toastify({
         text: "Bienvenido, has iniciado sesión correctamente.",
         duration: 3000,
