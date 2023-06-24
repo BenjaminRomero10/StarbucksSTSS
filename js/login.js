@@ -1,5 +1,14 @@
+function getCookie() {
+    var c = document.cookie;
+
+    if (c) 
+        return c.substring(c.indexOf("=") + 1);
+        
+    return null;
+}
+
 window.onload = function(){
-    let user = sessionStorage.getItem('user');
+    let user = getCookie('user');
     console.log(user);
     
     Toastify({

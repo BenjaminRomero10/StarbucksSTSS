@@ -23,7 +23,7 @@
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
         
-        $_SESSION["user"] = $user;
+        setcookie('user', $user, time() + 3600);
         header('Location: ../index.html');
     } else {
         $SESSION["user"] = null;
