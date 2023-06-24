@@ -25,6 +25,7 @@
         $_SESSION['user'] = $user;
         header('Location: ../index.html');
     } else {
+        $SESSION['user'] = null;
         header('Location: ../index.html');
     }
 

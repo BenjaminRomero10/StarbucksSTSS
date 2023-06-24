@@ -1,15 +1,17 @@
 window.onload = function(){
-    let num = 4;
+    let user = sessionStorage.getItem('user');
     
-    Toastify({
-        text: "Bienvenido, has iniciado sesión correctamente.",
-        duration: 3000,
-        close: true,
-        gravity: "top",
-        position: "right",
-        backgroundColor: "#1e3932",
-        stopOnFocus: true,
-    }).showToast();
+    if(user != null){
+        Toastify({
+            text: "Bienvenido, has iniciado sesión correctamente.",
+            duration: 3000,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#1e3932",
+            stopOnFocus: true,
+        }).showToast();
+    }
 
 }
     
