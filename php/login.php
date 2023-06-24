@@ -28,8 +28,8 @@
         $_SESSION['user'] = null;
     }
 
+    header('Location: ../index.html');
     sqlsrv_free_stmt($getResults);
     sqlsrv_close($conn);
-    header('Location: ../index.html');
 ?>
 
