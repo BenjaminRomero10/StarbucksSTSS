@@ -1,3 +1,10 @@
+<?php
+    session_start();  
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){  
+        header("Location: pages/iniciarSesion.html");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
