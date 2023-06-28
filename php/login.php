@@ -23,7 +23,7 @@
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
 
-        header('Location: ../index.php');
+        header('Location: ../index.html');
     } else {
 
     }
