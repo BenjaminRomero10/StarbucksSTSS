@@ -1,5 +1,9 @@
 <?php
-    echo "pene de camilla";
+    session_start();  
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){  
+        header("location: pages/iniciarSesion.html");
+        exit;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
