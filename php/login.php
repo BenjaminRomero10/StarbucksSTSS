@@ -24,7 +24,7 @@
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
         session_start();
         $_SESSION["loggedin"] = true;
-        header('Location: ../index.php');
+        header('Location: ../index.html');
     } else {
         header('Location: ../pages/iniciarSesion.html');
     }
