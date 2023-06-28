@@ -22,10 +22,11 @@
 
     $row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC);
     if (strtolower($row['Nombre']) == strtolower($user) && $row['Contra'] == $pass){
-
-        header('Location: ../index.html');
+        session_start();
+        $_SESSION["loggedin"] = true;
+        header('Location: ../index.php');
     } else {
-
+        header('Location: ../pages/iniciarSesion.html');
     }
 
     sqlsrv_free_stmt($getResults);
