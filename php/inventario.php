@@ -208,16 +208,16 @@
             <div class="aboutUs">
                 <p class="title">SOBRE NOSOTROS</p>
                 <ul>
-                    <li><a href="#">QUIENES SOMOS</a></li>
-                    <li><a href="#">NUESTRA MISION</a></li>
-                    <li><a href="#">NUESTRA VISION</a></li>
+                    <li><a href="../pages/quienesSomos.html">QUIENES SOMOS</a></li>
+                    <li><a href="../pages/mision.html">NUESTRA MISION</a></li>
+                    <li><a href="../pages/vision.html">NUESTRA VISION</a></li>
                 </ul>
             </div>
             <div class="contact">
                 <p class="title">CONTACTO Y SOPORTE</p>
                 <ul>
-                    <li><a href="#">WHATSAPP: (+51)999770316</a></li>
-                    <li><a href="">CORREO: CONTACT@STSS.COM</a></li>
+                    <li><a href="https://wa.me/51997701723"  target="_blank">CONTACTO AL WHATSAPP</a></li>
+                    <li><a href="#">CORREO: CONTACT@STSS.COM</a></li>
                 </ul>
             </div>
         </div>
