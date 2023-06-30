@@ -387,6 +387,9 @@ section h2{
     border-bottom: 5px solid var(--starbucks-house);
 }
 
+.stickyNav{
+    position: sticky;
+}
 /* QUIENES SOMOS */
 
 .quienesSomos{
