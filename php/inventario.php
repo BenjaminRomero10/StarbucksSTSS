@@ -39,13 +39,19 @@
             </ul>
         </nav>
     </header>
-    <div class="filters">
-        <a href="#" class="congelados" >CONGELADOS</a>
-        <a href="#" class="refrigerados">REFRIGERADOS</a>
-        <a href="#" class="secos">SECOS</a>
-        <a href="#" class="limpieza">LIMPIEZA</a>
-        <a href="#" class="publicidad">PUBLICIDAD</a>
+    <div class="stickyNav">
+        <div class="filters">
+            <a href="#" class="congelados" >CONGELADOS</a>
+            <a href="#" class="refrigerados">REFRIGERADOS</a>
+            <a href="#" class="secos">SECOS</a>
+            <a href="#" class="limpieza">LIMPIEZA</a>
+            <a href="#" class="publicidad">PUBLICIDAD</a>
+        </div>
+        <div class="buscador">
+            
+        </div>
     </div>
+    
     <div class="inventoryContent">
        <section class="congeladosSection">
         <h2>CONGELADOS</h2>
