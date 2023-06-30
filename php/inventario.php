@@ -66,7 +66,7 @@
             </div> -->
 
             <?php
-                $tsql= "EXEC FamiliaProductosPorSucursal "."'".$_SESSION['user']."' 'CONGELADO';";  
+                $tsql= "EXEC FamiliaProductosPorSucursal "."'".$_SESSION['user']."', 'CONGELADO';";  
                 $getResults= sqlsrv_query($conn, $tsql);
         
                 if ($getResults == FALSE) echo (sqlsrv_errors());
