@@ -22,8 +22,8 @@
                 FROM Inventario i
                 JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
                 JOIN Sucursal s ON ps.SucursalID = s.SucursalID
-                WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
-                ";
+                WHERE i.ProductoID = ? AND s.Nombre = ?";
+        $params = array($producto, $_SESSION['user']);
         break;
     case "-1":
         // Disminuir el stock en uno
@@ -40,7 +40,7 @@
                 FROM Inventario i
                 JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
                 JOIN Sucursal s ON ps.SucursalID = s.SucursalID
-                WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
+                WHERE i.ProductoID = ? AND s.Nombre = ?
                 ";
         break;
     }
@@ -55,8 +55,8 @@
             FROM Inventario i
             JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
             JOIN Sucursal s ON ps.SucursalID = s.SucursalID
-            WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
-            ";
+            WHERE i.ProductoID = ? AND s.Nombre = ?";
+    $params = array($producto, $_SESSION['user']);
     $result = sqlsrv_query($conn, $sql);
     if ($result === false) {
     die(print_r(sqlsrv_errors(), true));
