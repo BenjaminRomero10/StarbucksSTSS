@@ -1,6 +1,21 @@
 <?php
     session_start();
-    echo $_SESSION['user'];
+    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
+        header('Location: ../index.html');            
+    } else {
+        $serverName = "stss.database.windows.net";
+        $connectionOptions = array(
+            "Database" => "STSSDB",
+            "Uid" => "CloudSA4049f354",
+            "PWD" => "Contraseña11"
+        );
+
+        //Establishes the connection
+        $conn = sqlsrv_connect($serverName, $connectionOptions);
+        if ($conn === false) {
+            die(print_r(sqlsrv_errors(), true));
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -35,7 +50,7 @@
        <section class="congeladosSection">
         <h2>CONGELADOS</h2>
         <div class="itemContainer">
-            <div class="item">
+            <!-- <div class="item">
                 <div class="itemTitle">
                     <h3>Item Title</h3>
                 </div>
@@ -48,7 +63,32 @@
                         <p>25</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
+
+            <?php
+                $tsql= "EXEC FamiliaProductosPorSucursal "."'".$_SESSION['user']."' 'CONGELADO';";  
+                $getResults= sqlsrv_query($conn, $tsql);
+        
+                if ($getResults == FALSE) echo (sqlsrv_errors());
+        
+                while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+                    echo '<div class="item">';
+                    echo '  <div class="itemTitle">';
+                    echo "    <h3>{$row['NombreProducto']}</h3>";
+                    echo '  </div>';
+                    echo '  <div class="itemContent">';
+                    echo '    <div class="img"></div>';
+                    echo '    <button class="button1">+1</button>';
+                    echo '    <button class="button2">-1</button>';
+                    echo '    <button class="button3">PERSONALIZADO</button>';
+                    echo '    <div class="count">';
+                    echo "      <p>{$row['Stock']}</p>";
+                    echo '    </div>';
+                    echo '  </div>';
+                    echo '</div>';
+                   }
+                sqlsrv_free_stmt($getResults);
+            ?>
         </div>
        </section>
        <section class="refrigeradosSection">
