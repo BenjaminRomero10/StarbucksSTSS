@@ -13,8 +13,6 @@
     if ($conn === false) {
         die(print_r(sqlsrv_errors(), true));
     }
-    $console = $_SESSION['user'];
-    echo "<script>console.log('$console')</script>";
 
     // Conectar a la base de datos y ejecutar una consulta SQL para actualizar el stock
     switch ($accion) {
@@ -24,7 +22,7 @@
                 FROM Inventario i
                 JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
                 JOIN Sucursal s ON ps.SucursalID = s.SucursalID
-                WHERE i.ProductoID = $producto AND s.Nombre = '{$_SESSION['user']}'
+                WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
                 ";
         break;
     case "-1":
@@ -33,7 +31,7 @@
                 FROM Inventario i
                 JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
                 JOIN Sucursal s ON ps.SucursalID = s.SucursalID
-                WHERE i.ProductoID = $producto AND s.Nombre = '{$_SESSION['user']}'
+                WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
                 ";
         break;
     case "PERSONALIZADO":
@@ -42,7 +40,7 @@
                 FROM Inventario i
                 JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
                 JOIN Sucursal s ON ps.SucursalID = s.SucursalID
-                WHERE i.ProductoID = $producto AND s.Nombre = '{$_SESSION['user']}'
+                WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
                 ";
         break;
     }
@@ -57,7 +55,7 @@
             FROM Inventario i
             JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
             JOIN Sucursal s ON ps.SucursalID = s.SucursalID
-            WHERE i.ProductoID = $producto AND s.Nombre = '{$_SESSION['user']}'
+            WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
             ";
     $result = sqlsrv_query($conn, $sql);
     if ($result === false) {
