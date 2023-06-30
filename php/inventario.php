@@ -198,7 +198,7 @@
                         echo '    <button class="button2">-1</button>';
                         echo '    <button class="button3">PERSONALIZADO</button>';
                         echo '    <div class="count">';
-                        echo "      <p>{$row['Stock']}</p>";
+                        echo "      <p id=\"{$row['ProductoID']}\">{$row['Stock']}</p>";
                         echo '    </div>';
                         echo '  </div>';
                         echo '</div>';
