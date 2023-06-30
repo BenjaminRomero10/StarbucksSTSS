@@ -13,10 +13,6 @@
     if ($conn === false) {
         die(print_r(sqlsrv_errors(), true));
     }
-    echo    "<script>
-                    console.log('$producto');
-                    console.log('$accion');
-            </script>";
 
     // Conectar a la base de datos y ejecutar una consulta SQL para actualizar el stock
     switch ($accion) {
@@ -26,8 +22,8 @@
                 FROM Inventario i
                 JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
                 JOIN Sucursal s ON ps.SucursalID = s.SucursalID
-                WHERE i.ProductoID = ? AND s.Nombre = ?";
-        $params = array($producto, $_SESSION['user']);
+                WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
+                ";
         break;
     case "-1":
         // Disminuir el stock en uno
@@ -44,7 +40,7 @@
                 FROM Inventario i
                 JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
                 JOIN Sucursal s ON ps.SucursalID = s.SucursalID
-                WHERE i.ProductoID = ? AND s.Nombre = ?
+                WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
                 ";
         break;
     }
