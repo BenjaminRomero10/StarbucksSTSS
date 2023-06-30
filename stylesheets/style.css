@@ -390,6 +390,7 @@ section h2{
 .stickyNav{
     position: sticky;
     top: 0px;
+    background-color: #fff;
 }
 /* QUIENES SOMOS */
 
