@@ -3,6 +3,16 @@
     // Recibir los datos del producto y la acción
     $producto = $_POST['producto'];
     $accion = $_POST['accion'];
+    $serverName = "stss.database.windows.net";
+    $connectionOptions = array(
+        "Database" => "STSSDB",
+        "Uid" => "CloudSA4049f354",
+        "PWD" => "Contraseña11"
+    );
+    $conn = sqlsrv_connect($serverName, $connectionOptions);
+    if ($conn === false) {
+        die(print_r(sqlsrv_errors(), true));
+    }
 
     // Conectar a la base de datos y ejecutar una consulta SQL para actualizar el stock
     switch ($accion) {
