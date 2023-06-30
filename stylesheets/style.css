@@ -315,6 +315,10 @@ footer img{
     padding: 0 1rem;
 }
 
+.inventoryContent h3 {
+    font-weight: normal;
+}
+
 section{
     color: var(--starbucks-house);
     border: 1px solid var(--border);
