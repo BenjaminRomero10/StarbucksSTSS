@@ -13,10 +13,6 @@
     if ($conn === false) {
         die(print_r(sqlsrv_errors(), true));
     }
-    echo    "<script>
-                    console.log('$producto');
-                    console.log('$accion');
-            </script>";
 
     // Conectar a la base de datos y ejecutar una consulta SQL para actualizar el stock
     switch ($accion) {

@@ -3,7 +3,7 @@ $("button").on("click", function(event) {
   event.preventDefault();
   // Obtener el nombre del producto y la acción desde el botón
   var producto = $(this).data("producto");
-  var accion = $(this).val();
+  var accion = $(this).data("accion");
   // Enviar una petición AJAX al archivo php con los datos
   $.ajax({
     url: "../php/buttonUpdate.php",
