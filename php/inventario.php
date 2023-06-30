@@ -94,25 +94,117 @@
        <section class="refrigeradosSection">
         <h2>REFRIGERADOS</h2>
         <div class="itemContainer">
-            
+        <?php
+                $tsql= "EXEC FamiliaProductosPorSucursal "."'".$_SESSION['user']."', 'REFRIGERADO';";  
+                $getResults= sqlsrv_query($conn, $tsql);
+        
+                if ($getResults == FALSE) echo (sqlsrv_errors());
+        
+                while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+                    echo '<div class="item">';
+                    echo '  <div class="itemTitle">';
+                    echo "    <h3>{$row['NombreProducto']}</h3>";
+                    echo '  </div>';
+                    echo '  <div class="itemContent">';
+                    echo '    <div class="img"></div>';
+                    echo '    <button class="button1">+1</button>';
+                    echo '    <button class="button2">-1</button>';
+                    echo '    <button class="button3">PERSONALIZADO</button>';
+                    echo '    <div class="count">';
+                    echo "      <p>{$row['Stock']}</p>";
+                    echo '    </div>';
+                    echo '  </div>';
+                    echo '</div>';
+                   }
+                sqlsrv_free_stmt($getResults);
+            ?>
         </div>
        </section>
        <section class="secosSection">
         <h2>SECOS</h2>
         <div class="itemContainer">
-            
+        <?php
+                $tsql= "EXEC FamiliaProductosPorSucursal "."'".$_SESSION['user']."', 'SECOS';";  
+                $getResults= sqlsrv_query($conn, $tsql);
+        
+                if ($getResults == FALSE) echo (sqlsrv_errors());
+        
+                while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+                    echo '<div class="item">';
+                    echo '  <div class="itemTitle">';
+                    echo "    <h3>{$row['NombreProducto']}</h3>";
+                    echo '  </div>';
+                    echo '  <div class="itemContent">';
+                    echo '    <div class="img"></div>';
+                    echo '    <button class="button1">+1</button>';
+                    echo '    <button class="button2">-1</button>';
+                    echo '    <button class="button3">PERSONALIZADO</button>';
+                    echo '    <div class="count">';
+                    echo "      <p>{$row['Stock']}</p>";
+                    echo '    </div>';
+                    echo '  </div>';
+                    echo '</div>';
+                   }
+                sqlsrv_free_stmt($getResults);
+            ?>
         </div>
        </section>
        <section class="limpiezaSection">
         <h2>LIMPIEZA</h2>
         <div class="itemContainer">
-            
+        <?php
+                $tsql= "EXEC FamiliaProductosPorSucursal "."'".$_SESSION['user']."', 'LIMPIEZA';";  
+                $getResults= sqlsrv_query($conn, $tsql);
+        
+                if ($getResults == FALSE) echo (sqlsrv_errors());
+        
+                while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+                    echo '<div class="item">';
+                    echo '  <div class="itemTitle">';
+                    echo "    <h3>{$row['NombreProducto']}</h3>";
+                    echo '  </div>';
+                    echo '  <div class="itemContent">';
+                    echo '    <div class="img"></div>';
+                    echo '    <button class="button1">+1</button>';
+                    echo '    <button class="button2">-1</button>';
+                    echo '    <button class="button3">PERSONALIZADO</button>';
+                    echo '    <div class="count">';
+                    echo "      <p>{$row['Stock']}</p>";
+                    echo '    </div>';
+                    echo '  </div>';
+                    echo '</div>';
+                   }
+                sqlsrv_free_stmt($getResults);
+            ?>
         </div>
        </section>
        <section class="publicidadSection">
         <h2>PUBLICIDAD</h2>
         <div class="itemContainer">
+            <?php
+                    $tsql= "EXEC FamiliaProductosPorSucursal "."'".$_SESSION['user']."', 'PUBLICIDAD';";  
+                    $getResults= sqlsrv_query($conn, $tsql);
             
+                    if ($getResults == FALSE) echo (sqlsrv_errors());
+            
+                    while ($row = sqlsrv_fetch_array($getResults, SQLSRV_FETCH_ASSOC)) {
+                        echo '<div class="item">';
+                        echo '  <div class="itemTitle">';
+                        echo "    <h3>{$row['NombreProducto']}</h3>";
+                        echo '  </div>';
+                        echo '  <div class="itemContent">';
+                        echo '    <div class="img"></div>';
+                        echo '    <button class="button1">+1</button>';
+                        echo '    <button class="button2">-1</button>';
+                        echo '    <button class="button3">PERSONALIZADO</button>';
+                        echo '    <div class="count">';
+                        echo "      <p>{$row['Stock']}</p>";
+                        echo '    </div>';
+                        echo '  </div>';
+                        echo '</div>';
+                    }
+                    sqlsrv_free_stmt($getResults);
+                ?>
         </div>
        </section>
     </div>
