@@ -6,7 +6,7 @@ $("button").on("click", function(event) {
   var accion = $(this).val();
   // Enviar una petición AJAX al archivo php con los datos
   $.ajax({
-    url: "procesar.php",
+    url: "../php/buttonUpdate.php",
     method: "POST",
     data: {producto: producto, accion: accion},
     dataType: "text",
