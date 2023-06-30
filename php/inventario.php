@@ -50,21 +50,6 @@
        <section class="congeladosSection">
         <h2>CONGELADOS</h2>
         <div class="itemContainer">
-            <!-- <div class="item">
-                <div class="itemTitle">
-                    <h3>Item Title</h3>
-                </div>
-                <div class="itemContent">
-                    <div class="img"></div>
-                    <button class="button1">+1</button>
-                    <button class="button2">-1</button>
-                    <button class="button3">PERSONALIZADO</button>
-                    <div class="count">
-                        <p>25</p>
-                    </div>
-                </div>
-            </div> -->
-
             <?php
                 $tsql= "EXEC FamiliaProductosPorSucursal "."'".$_SESSION['user']."', 'CONGELADO';";  
                 $getResults= sqlsrv_query($conn, $tsql);
@@ -78,11 +63,11 @@
                     echo '  </div>';
                     echo '  <div class="itemContent">';
                     echo '    <div class="img"></div>';
-                    echo '    <button class="button1">+1</button>';
-                    echo '    <button class="button2">-1</button>';
-                    echo '    <button class="button3">PERSONALIZADO</button>';
+                    echo "    <button class=\"button1\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+1\">+1</button>";
+                    echo "    <button class=\"button2\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-1\">-1</button>";
+                    echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"PERSONALIZADO\">PERSONALIZADO</button>";
                     echo '    <div class="count">';
-                    echo "      <p>{$row['Stock']}</p>";
+                    echo "      <p id=\"{$row['ProductoID']}\">{$row['Stock']}</p>";
                     echo '    </div>';
                     echo '  </div>';
                     echo '</div>';
@@ -111,7 +96,7 @@
                     echo '    <button class="button2">-1</button>';
                     echo '    <button class="button3">PERSONALIZADO</button>';
                     echo '    <div class="count">';
-                    echo "      <p>{$row['Stock']}</p>";
+                    echo "      <p id=\"{$row['ProductoID']}\">{$row['Stock']}</p>";
                     echo '    </div>';
                     echo '  </div>';
                     echo '</div>';
@@ -140,7 +125,7 @@
                     echo '    <button class="button2">-1</button>';
                     echo '    <button class="button3">PERSONALIZADO</button>';
                     echo '    <div class="count">';
-                    echo "      <p>{$row['Stock']}</p>";
+                    echo "      <p id=\"{$row['ProductoID']}\">{$row['Stock']}</p>";
                     echo '    </div>';
                     echo '  </div>';
                     echo '</div>';
@@ -169,7 +154,7 @@
                     echo '    <button class="button2">-1</button>';
                     echo '    <button class="button3">PERSONALIZADO</button>';
                     echo '    <div class="count">';
-                    echo "      <p>{$row['Stock']}</p>";
+                    echo "      <p id=\"{$row['ProductoID']}\">{$row['Stock']}</p>";
                     echo '    </div>';
                     echo '  </div>';
                     echo '</div>';
@@ -246,5 +231,6 @@
         </div>
     </footer>
     <script src="../js/inventario.js"></script>
+    <script src="../js/buttonListener.js"></script>
 </body>
 </html>
