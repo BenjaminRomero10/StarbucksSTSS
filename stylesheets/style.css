@@ -447,54 +447,63 @@ section h2{
  }
 
 /* MISION */
+.mision {
+    padding: 20px;
+    margin: 20px;
+}
 
-.mision{
-    justify-content: space-between;
+.mision h1 {
+    color: #333;
     text-align: center;
-    margin: 50px;
+    padding-bottom: 20px;
 }
-.mision h1{
-    padding: 1%;
-    font-size: 40px;
-}
-.mision h2{
+
+.mision .imagen img {
     display: block;
-    color: #1E3932;
-    font-weight: lighter;
-    text-align: center;
-    font-size: 30px;
-    padding: 70px;
-    margin: 30px;
-    background-color: azure;
-    border: 1px solid black;
+    margin: 0 auto;
+    height: auto;
+    width: auto;
 }
-.mision h3{
+
+.mision .contenido h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #666;
+    text-align: center;
+}
+
+.mision .contenido p {
+    color: #999;
     text-align: justify;
-    font-weight: 10;
 }
 
 /* VISION */
 
-.vision{
-    justify-content: space-between;
+.vision h1 {
+    color: #333;
     text-align: center;
-    margin: 50px; 
+    padding-bottom: 20px;
 }
-.vision h1{
-    padding: 1%;
-    font-size: 40px;
-}
-.vision h2{
+
+.vision .imagen img {
     display: block;
-    color: #1E3932;
-    font-weight: lighter;
-    text-align: center;
-    font-size: 30px;
-    padding: 70px;
-    margin: 30px;
-    background-color: azure;
-    border: 1px solid black;
+    margin: 0 auto;
+    height: auto;
+    width: auto;
 }
+
+.vision .contenido h2 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #666;
+    text-align: center;
+}
+
+.vision.contenido p {
+    color: #999;
+    text-align: justify;
+}
+
 .Indicador{
     display: flex;
     padding-left: 90px;
@@ -535,7 +544,16 @@ section h2{
     left: 1%;   
 }
 
-/* SUMINISTROS */
+/* RESPONSIVE */
+
+@media only screen and (width <= 768px) {
+    *{
+        font-size: 1rem;
+    }
+    .indexText .title{
+        font-size: 3rem;
+    }
+  }
 
 .Trabajando {
     display: flex;
@@ -595,8 +613,8 @@ section h2{
     }
 }
 
-/* ABOUT US */
 
+      
 .container_about{
     margin: 8rem;
 }
@@ -747,14 +765,3 @@ section h2{
         max-width: 100%;
     }
 }
-
-/* RESPONSIVE */
-
-@media only screen and (width <= 768px) {
-    *{
-        font-size: 1rem;
-    }
-    .indexText .title{
-        font-size: 3rem;
-    }
-  }
