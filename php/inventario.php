@@ -35,7 +35,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#">CONTROL DE SUMINISTROS</a></li>
+                <li><a href="../pages/suministros.html">CONTROL DE SUMINISTROS</a></li>
             </ul>
         </nav>
     </header>
