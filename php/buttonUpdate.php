@@ -34,9 +34,18 @@
                 WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
                 ";
         break;
-    case "PERSONALIZADO":
-        // Hacer algo personalizado
+    case "+10":
+        // Aumentar el stock en diez
         $sql = "UPDATE Inventario SET Stock = Stock + 10
+                FROM Inventario i
+                JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
+                JOIN Sucursal s ON ps.SucursalID = s.SucursalID
+                WHERE i.ProductoID = '$producto' AND s.Nombre = '{$_SESSION['user']}'
+                ";
+        break;
+    case "-10":
+        // Disminuir el stock en diez
+        $sql = "UPDATE Inventario SET Stock = Stock - 10
                 FROM Inventario i
                 JOIN ProductosEnSucursal ps ON i.ProductoID = ps.ProductoID AND i.SucursalID = ps.SucursalID
                 JOIN Sucursal s ON ps.SucursalID = s.SucursalID

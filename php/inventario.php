@@ -71,7 +71,8 @@
                     echo '    <div class="img"></div>';
                     echo "    <button class=\"button1\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+1\">+1</button>";
                     echo "    <button class=\"button2\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-1\">-1</button>";
-                    echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"PERSONALIZADO\">PERSONALIZADO</button>";
+                    echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+10\">+10</button>";
+                    echo "    <button class=\"button4\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-10\">-10</button>";
                     echo '    <div class="count">';
                     echo "      <p id=\"{$row['ProductoID']}\">{$row['Stock']}</p>";
                     echo '    </div>';
@@ -100,7 +101,8 @@
                     echo '    <div class="img"></div>';
                     echo "    <button class=\"button1\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+1\">+1</button>";
                     echo "    <button class=\"button2\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-1\">-1</button>";
-                    echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"PERSONALIZADO\">PERSONALIZADO</button>";
+                    echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+10\">+10</button>";
+                    echo "    <button class=\"button4\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-10\">-10</button>";                    
                     echo '    <div class="count">';
                     echo "      <p id=\"{$row['ProductoID']}\">{$row['Stock']}</p>";
                     echo '    </div>';
@@ -129,7 +131,8 @@
                     echo '    <div class="img"></div>';
                     echo "    <button class=\"button1\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+1\">+1</button>";
                     echo "    <button class=\"button2\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-1\">-1</button>";
-                    echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"PERSONALIZADO\">PERSONALIZADO</button>";
+                    echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+10\">+10</button>";
+                    echo "    <button class=\"button4\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-10\">-10</button>";
                     echo '    <div class="count">';
                     echo "      <p id=\"{$row['ProductoID']}\">{$row['Stock']}</p>";
                     echo '    </div>';
@@ -158,7 +161,8 @@
                     echo '    <div class="img"></div>';
                     echo "    <button class=\"button1\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+1\">+1</button>";
                     echo "    <button class=\"button2\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-1\">-1</button>";
-                    echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"PERSONALIZADO\">PERSONALIZADO</button>";
+                    echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+10\">+10</button>";
+                    echo "    <button class=\"button4\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-10\">-10</button>";
                     echo '    <div class="count">';
                     echo "      <p id=\"{$row['ProductoID']}\">{$row['Stock']}</p>";
                     echo '    </div>';
@@ -187,7 +191,8 @@
                         echo '    <div class="img"></div>';
                         echo "    <button class=\"button1\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+1\">+1</button>";
                         echo "    <button class=\"button2\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-1\">-1</button>";
-                        echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"PERSONALIZADO\">PERSONALIZADO</button>";
+                        echo "    <button class=\"button3\" data-producto=\"{$row['ProductoID']}\" data-accion=\"+10\">+10</button>";
+                        echo "    <button class=\"button4\" data-producto=\"{$row['ProductoID']}\" data-accion=\"-10\">-10</button>";
                         echo '    <div class="count">';
                         echo "      <p id=\"{$row['ProductoID']}\">{$row['Stock']}</p>";
                         echo '    </div>';
