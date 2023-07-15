@@ -60,14 +60,18 @@
 
             <div class="suministrosTable">
                 <table>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Ultimo Pedido</th>
-                        <th>Fecha</th>
-                        <th>Stock</th>
-                        <th>Unidad Medida</th>
-                    </tr>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Ultimo Pedido</th>
+                            <th>Fecha</th>
+                            <th>Stock</th>
+                            <th>Unidad Medida</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
                 </table>
 
             </div>    
