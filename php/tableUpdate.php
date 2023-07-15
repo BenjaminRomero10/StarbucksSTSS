@@ -89,7 +89,7 @@
         echo "    <td>{$row['ID']}</td>";
         echo "    <td>{$row['Nombre']}</td>";
         echo "    <td>{$row['UltimoPedido']}</td>";
-        echo "    <td>{$row['Fecha']}</td>";
+        echo "    <td>1</td>";
         echo "    <td>{$row['Stock']}</td>";
         echo "    <td>{$row['UnidadMedida']}</td>";
         echo "</tr>";
