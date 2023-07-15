@@ -83,13 +83,6 @@
     if ($result === false) {
     die(print_r(sqlsrv_errors(), true));
     }
-    function debug_to_console($data) {
-        $output = $data;
-        if (is_array($output))
-            $output = implode(',', $output);
-    
-        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-    }
 
     while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
         echo "<tr>";
