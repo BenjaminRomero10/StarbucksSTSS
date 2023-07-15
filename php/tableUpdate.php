@@ -83,6 +83,13 @@
     if ($result === false) {
     die(print_r(sqlsrv_errors(), true));
     }
+    function debug_to_console($data) {
+        $output = $data;
+        if (is_array($output))
+            $output = implode(',', $output);
+    
+        echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+    }
 
     while ($row = sqlsrv_fetch_array($result, SQLSRV_FETCH_ASSOC)) {
         echo "<tr>";
@@ -91,16 +98,7 @@
         echo "    <td>{$row['UltimoPedido']}</td>";
         $fecha_str = $row['Fecha'];
         var_dump($fecha_str);
-        function debug_to_console($data) {
-            $output = $data;
-            if (is_array($output))
-                $output = implode(',', $output);
-        
-            echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
-        }
-
         debug_to_console($fecha_str);
-
         echo "    <td>{$fecha_str}</td>";
         echo "    <td>{$row['Stock']}</td>";
         echo "    <td>{$row['UnidadMedida']}</td>";
