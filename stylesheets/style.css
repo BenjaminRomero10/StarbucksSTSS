@@ -3,7 +3,7 @@
 
 :root{
     --starbucks-green: #006241;
-    --starbucks-house: #1e3932;
+    --starbucks-house: rgb(30, 57, 50);
     --border: #ccc;
     --font: 'Secular One', sans-serif;
     --font2: 'Hind Madurai', sans-serif;
@@ -400,6 +400,155 @@ section h2{
     top: 0px;
     background-color: #fff;
 }
+
+/* SUMINISTROS */
+
+.supplyContent{
+    display: grid;
+    grid-template-areas: 
+        "sidebar items"
+        "panel panel";
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 4fr 1fr;
+    border: 1px solid var(--border);
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+.sidebar{
+    grid-area: sidebar;
+}
+
+.suministrosItems{
+    grid-area: items;
+}
+
+.panelSuministros{
+    grid-area: panel;
+    border-top: 1px solid var(--border);
+}
+
+.sidebarNav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    text-align: center;
+    border-right: 1px solid var(--border);
+    height: 100%;
+}
+
+.sidebarNav button{
+    border: 0px;
+    cursor: pointer;
+    background-color: #fff;
+    color: var(--text-color);
+}
+
+.sidebarNav button:hover{
+    color: var(--starbucks-green);
+}
+
+.searchBar{
+    display: flex;
+    padding: 1rem;
+}
+
+.searchBar input{
+    border-radius: 5px 0 0 5px;
+    border: 1px solid var(--border);
+    color: var(--text-color);
+    width: 100%;
+    padding-left: 0.5rem;
+}
+
+.searchBar input:focus{
+    outline: none;
+}
+
+.btnSearch{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--starbucks-green);
+    padding: 0px 5px;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+}
+
+.btnSearch:hover{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--button-hover);
+    padding: 0px 5px;
+    border-radius: 0px 5px 5px 0px;
+    cursor: pointer;
+}
+
+.suministrosTable{
+    overflow-y: scroll;
+    height: 22rem;
+}
+td, th{
+    border: 1px solid var(--border);
+    text-align: center;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th{
+    color: var(--text-color);
+}
+
+.panelSuministros{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.panelSuministros button{
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    padding: 0.6rem;
+    border: 0px;
+}
+
+.panelSuministros button:nth-child(1){
+    background-color: var(--starbucks-green);
+}
+
+.panelSuministros button:nth-child(1):hover{
+    background-color: var(--button-hover);
+}
+
+.panelSuministros button:nth-child(2){
+    background-color: rgb(204, 62, 62);
+}
+
+.panelSuministros button:nth-child(2):hover{
+    background-color: rgb(226, 82, 82);
+}
+
+.panelSuministros button:nth-child(3){
+    background-color: gray;
+}
+
+.panelSuministros button:nth-child(3):hover{
+    background-color: rgb(157, 155, 155);
+}
+
+.panelSuministros button:nth-child(4){
+    background-color: rgb(63, 63, 176);
+}
+
+.panelSuministros button:nth-child(4):hover{
+    background-color: rgb(78, 78, 212);
+}
 /* QUIENES SOMOS */
 
 .quienesSomos{
@@ -548,16 +697,7 @@ section h2{
     left: 1%;   
 }
 
-/* RESPONSIVE */
-
-@media only screen and (width <= 768px) {
-    *{
-        font-size: 1rem;
-    }
-    .indexText .title{
-        font-size: 3rem;
-    }
-  }
+/* WIP */
 
 .Trabajando {
     display: flex;
@@ -609,19 +749,12 @@ section h2{
     box-shadow: none;
 }
 
-@media (max-width: 768px) {
-    .Trabajando {
-        flex-direction: column;
-        margin: 2rem;
-        align-items: flex-start;
-    }
-}
-
-
+/* ABOUT US */
       
 .container_about{
     margin: 8rem;
 }
+
 .container_about .AboutUs {
     display: flex;
     flex-direction: row;
@@ -653,8 +786,7 @@ section h2{
     margin-left: 2rem;
     height: 400px;
     width: 800px;     
-}      
-    
+}       
 
 .sub-container{
     max-width: 1200px;
@@ -664,6 +796,7 @@ section h2{
     flex-wrap: wrap;
     justify-content: center;
 }
+
 .teams{
     margin: 10px;
     padding:22px;
@@ -672,15 +805,18 @@ section h2{
     transition: 0.4s;
     box-sizing: border-box;
 }
+
 .teams:hover{
     background:#e7e7e7;
 }
+
 .teams img{
     display: block;
     margin: auto;
     width: 200px;
     height: 200px;
 }
+
 .name{
     padding:12px;
     font-weight: bold;
@@ -688,21 +824,25 @@ section h2{
     text-transform: uppercase;
     color: #006241;
 }
+
 .desig{
     font-style: italic;
     color:dimgray
 }
+
 .about{
     margin: 20px 0;
     font-weight:normal;
     color:#000000;
 }
+
 .social-links a{
     display:inline-block;
     height: 30px;
     width: 30px;
     transition: .4s;
 }
+
 .social-links a i{
     color:#006241
 }      
@@ -720,6 +860,7 @@ section h2{
     justify-content: center;
     padding-top: 100px;
 }
+
 .teams{
     margin: 10px;
     padding:22px;
@@ -728,15 +869,18 @@ section h2{
     transition: 0.4s;
     box-sizing: border-box;
 }
+
 .teams:hover{
     background:#e7e7e7;
 }
+
 .teams img{
     display: block;
     margin: auto;
     width: 200px;
     height: 200px;
 }
+
 .name{
     padding:12px;
     font-weight: bold;
@@ -744,27 +888,49 @@ section h2{
     text-transform: uppercase;
     color: #006241;
 }
+
 .desig{
     font-style: italic;
     color:dimgray
 }
+
 .about{
     margin: 20px 0;
     font-weight:normal;
     color:#000000;
 }
+
 .social-links a{
     display:inline-block;
     height: 30px;
     width: 30px;
     transition: .4s;
 }
+
 .social-links a i{
     color:#006241
 }
 
-@media screen and (maxwidth:600px)
-{
+
+/* RESPONSIVE */
+
+@media only screen and (width <= 768px) {
+    *{
+        font-size: 1rem;
+    }
+
+    .indexText .title{
+        font-size: 3rem;
+    }
+
+    .Trabajando {
+        flex-direction: column;
+        margin: 2rem;
+        align-items: flex-start;
+    }
+}
+
+@media screen and (maxwidth:600px){
     .teams{
         max-width: 100%;
     }
