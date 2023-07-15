@@ -90,12 +90,17 @@
         echo "    <td>{$row['Nombre']}</td>";
         echo "    <td>{$row['UltimoPedido']}</td>";
         $fecha_str = $row['Fecha'];
-        $fecha = date_create($fecha_str);
-        if ($fecha === false) {
-          die(print_r(date_get_last_errors(), true));
-        }
-        $fecha_str = $fecha->format('Y-m-d H:i');
         var_dump($fecha_str);
+        function debug_to_console($data) {
+            $output = $data;
+            if (is_array($output))
+                $output = implode(',', $output);
+        
+            echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+        }
+
+        debug_to_console($fecha_str);
+
         echo "    <td>{$fecha_str}</td>";
         echo "    <td>{$row['Stock']}</td>";
         echo "    <td>{$row['UnidadMedida']}</td>";
