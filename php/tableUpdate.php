@@ -89,8 +89,8 @@
         echo "    <td>{$row['ID']}</td>";
         echo "    <td>{$row['Nombre']}</td>";
         echo "    <td>{$row['UltimoPedido']}</td>";
-        $fecha_str = $row['Fecha'];
-        var_dump($fecha_str);
+        $fecha = $row['Fecha'];
+        $fecha_str = $fecha->format('Y-m-d H:i');
         echo "    <td>{$fecha_str}</td>";
         echo "    <td>{$row['Stock']}</td>";
         echo "    <td>{$row['UnidadMedida']}</td>";
