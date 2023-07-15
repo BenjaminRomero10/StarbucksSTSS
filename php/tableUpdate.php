@@ -98,7 +98,6 @@
         echo "    <td>{$row['UltimoPedido']}</td>";
         $fecha_str = $row['Fecha'];
         var_dump($fecha_str);
-        debug_to_console($fecha_str);
         echo "    <td>{$fecha_str}</td>";
         echo "    <td>{$row['Stock']}</td>";
         echo "    <td>{$row['UnidadMedida']}</td>";
