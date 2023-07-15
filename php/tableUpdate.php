@@ -90,7 +90,9 @@
         echo "    <td>{$row['Nombre']}</td>";
         echo "    <td>{$row['UltimoPedido']}</td>";
         $fecha = sqlsrv_get_field($result, 3, SQLSRV_PHPTYPE_DATETIME);
-        var_dump($fecha);
+        if ($fecha === false) {
+          die(print_r(sqlsrv_errors(), true));
+        }
         $fecha_str = $fecha->format('Y-m-d H:i');
         echo "    <td>{$fecha_str}</td>";
         echo "    <td>{$row['Stock']}</td>";
