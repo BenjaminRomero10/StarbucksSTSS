@@ -89,7 +89,9 @@
         echo "    <td>{$row['ID']}</td>";
         echo "    <td>{$row['Nombre']}</td>";
         echo "    <td>{$row['UltimoPedido']}</td>";
-        echo "    <td>1</td>";
+        $fecha = sqlsrv_get_field($result, 3, SQLSRV_PHPTYPE_DATETIME);
+        $fecha_str = $fecha->format('Y-m-d H:i');
+        echo "    <td>{$fecha_str}</td>";
         echo "    <td>{$row['Stock']}</td>";
         echo "    <td>{$row['UnidadMedida']}</td>";
         echo "</tr>";
