@@ -1,4 +1,4 @@
-$("button").on("click", function(event) {
+$(".navOption").on("click", function(event) {
     event.preventDefault();
 
     var accion = $(this).data("accion");

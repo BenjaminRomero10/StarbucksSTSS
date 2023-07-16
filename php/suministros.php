@@ -43,12 +43,12 @@
     <div class="supplyContent">
         <div class="sidebar">
             <ul class="sidebarNav">
-                <li><button data-accion="PAPELERIA">PAPELERIA</button></li>
-                <li><button data-accion="SECOS">SECOS</button></li>
-                <li><button data-accion="EPP">EPP</button></li>
-                <li><button data-accion="LIMPIEZA">LIMPIEZA</button></li>
-                <li><button data-accion="SMALLWARE">SMALLWARE</button></li>
-                <li><button data-accion="PRENDAS">PRENDAS VESTIR</button></li>
+                <li><button class="navOption" data-accion="PAPELERIA">PAPELERIA</button></li>
+                <li><button class="navOption" data-accion="SECOS">SECOS</button></li>
+                <li><button class="navOption" data-accion="EPP">EPP</button></li>
+                <li><button class="navOption" data-accion="LIMPIEZA">LIMPIEZA</button></li>
+                <li><button class="navOption" data-accion="SMALLWARE">SMALLWARE</button></li>
+                <li><button class="navOption" data-accion="PRENDAS">PRENDAS VESTIR</button></li>
             </ul>
         </div>
         <div class="suministrosItems">
