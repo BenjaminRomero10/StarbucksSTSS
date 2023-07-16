@@ -79,16 +79,16 @@
 
         </div>
         <div class="panelSuministros">
-            <button>
+            <button class="agregar">
                 Agregar Item
             </button>
-            <button>
+            <button class="eliminar">
                 Eliminar Item
             </button>
-            <button>
+            <button class="lista">
                 Lista de Items
             </button>
-            <button>
+            <button class="pedir">
                 Solicitar Pedido
             </button>
         </div>
