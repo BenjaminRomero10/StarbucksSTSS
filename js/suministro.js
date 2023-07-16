@@ -1,6 +1,6 @@
 window.onload = function(){
     Toastify({
-        text: "Bienvenido, has iniciado sesión correctamente.",
+        text: "¡Item agregado a la lista!",
         duration: 2500,
         close: false,
         gravity: "top",
