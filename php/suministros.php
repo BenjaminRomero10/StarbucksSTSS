@@ -26,6 +26,7 @@
     <title>STSS | Suministros</title>
     <link href="https://www.starbucks.pe/Multimedia/logo/favicon.ico" rel="shortcut icon" type="image/x-icon">
     <script src="https://kit.fontawesome.com/ab4da2f3ac.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 <body>
