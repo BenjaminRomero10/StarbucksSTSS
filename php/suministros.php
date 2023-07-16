@@ -129,7 +129,9 @@
             <p class="copy">©2023 Lasino. Todos los Derechos Reservados.</p>
         </div>
     </footer>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="../js/sumButtonListener.js"></script>
+    <script src="../js/suministro.js"></script>
 </body>
 </html>

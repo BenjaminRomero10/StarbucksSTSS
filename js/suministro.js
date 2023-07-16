@@ -9,4 +9,3 @@ window.onload = function(){
         stopOnFocus: false,
     }).showToast();
 }
-    
