@@ -30,6 +30,24 @@
     <link rel="stylesheet" href="../stylesheets/style.css">
 </head>
 <body>
+    <div class="modal hidden">
+        <button class="close">&times;</button>
+        <div class="modal-content">
+            <h3>Seleccionaste el producto:</h3>
+            <p>ID: <span id="id"></span></p>
+            <p>Nombre: <span id="nombre"></span></p>
+            <p>Último pedido: <span id="pedido"></span></p>
+            <p>Stock: <span id="stock"></span></p>
+            <form class="modalForm">
+            <label for="cantidad">¿Cuánta cantidad deseas?</label>
+            <input type="number" id="cantidad" min="1" max="10" value="1">
+            <button type="submit">Confirmar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="overlay hidden"></div>
+
     <header>
         <div class="logo">
             <a href="../index.html"><img src="../source/img/Logo.png" alt="logo"></a>
