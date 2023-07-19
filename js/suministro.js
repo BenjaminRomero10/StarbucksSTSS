@@ -28,7 +28,7 @@ var seleccionarTr = function() {
         var ultimoPedido = this.children[2].textContent;
         var stock = this.children[4].textContent;
 
-        seleccion = "ID: " + id + ", Nombre: " + nombre + ", Pedido: " + pedido + ", Stock: " + stock;
+        seleccion = "ID: " + id + ", Nombre: " + nombre + ", Pedido: " + ultimoPedido + ", Stock: " + stock;
 
         idSpan.textContent = id;
         nombreSpan.textContent = nombre;
