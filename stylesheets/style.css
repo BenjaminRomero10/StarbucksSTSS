@@ -590,7 +590,7 @@ th{
     gap: 10px;
 }
 
-form {
+.modalForm {
     display: flex;
     gap: 10px;
 }
