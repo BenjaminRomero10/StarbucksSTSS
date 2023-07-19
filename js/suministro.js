@@ -22,23 +22,21 @@ const cerrar = document.querySelector(".close");
 var seleccion = "";
 
 var seleccionarTr = function() {
-    var id = this.children[0].textContent;
-    var nombre = this.children[1].textContent;
-    var ultimoPedido = this.children[2].textContent;
-    var stock = this.children[4].textContent;
+    if (this.children.length > 0) {
+        var id = this.children[0].textContent;
+        var nombre = this.children[1].textContent;
+        var ultimoPedido = this.children[2].textContent;
+        var stock = this.children[4].textContent;
 
-    seleccion = "ID: " + id + ", Nombre: " + nombre + ", Pedido: " + pedido + ", Stock: " + stock;
-    idSpan.textContent = id;
-    nombreSpan.textContent = nombre;
-    pedidoSpan.textContent = ultimoPedido;
-    stockSpan.textContent = stock;
+        seleccion = "ID: " + id + ", Nombre: " + nombre + ", Pedido: " + pedido + ", Stock: " + stock;
 
-    modal.classList.add("show");
-    overlay.classList.add("show");
+        idSpan.textContent = id;
+        nombreSpan.textContent = nombre;
+        pedidoSpan.textContent = ultimoPedido;
+        stockSpan.textContent = stock;
 
-    for (var j = 0; j < trs.length; j++) {
-      trs[j].classList.remove("seleccionable");
-      trs[j].removeEventListener("click", seleccionarTr);
+        modal.classList.add("show");
+        overlay.classList.add("show");
     }
   };
 
@@ -48,11 +46,7 @@ agregar.addEventListener("click", function(){
     if (trs.length > 0){
         for (var i = 0; i < trs.length; i++){
             trs[i].classList.add("seleccionable");
-
-            trs[i].addEventListener("click", function(){
-                trs[i].classList.add("seleccionable");
-                trs[i].addEventListener("click", seleccionarTr);
-            })
+            trs[i].addEventListener("click", seleccionarTr);
         }
     } else {
         Toastify({
@@ -66,11 +60,13 @@ agregar.addEventListener("click", function(){
         }).showToast();
 
         for (var i = 0; i < trs.length; i++) {
-            trs[i].classList.remove("seleccionable");
-            trs[i].removeEventListener("click", seleccionarTr);
+            if (i < trs.length) {
+                trs[i].classList.remove("seleccionable");
+                trs[i].removeEventListener("click", seleccionarTr);
+            }
         }
     }
-})
+});
 
 cerrar.addEventListener("click", function() {
     modal.classList.remove("show");
