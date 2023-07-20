@@ -19,7 +19,6 @@ const nombreSpan = document.querySelector("#nombre");
 const pedidoSpan = document.querySelector("#pedido");
 const stockSpan = document.querySelector("#stock");
 const cerrar = document.querySelector(".close");
-var seleccion = "";
 
 var seleccionarTr = function() {
     if (this.children.length > 0) {
@@ -27,13 +26,12 @@ var seleccionarTr = function() {
         var nombre = this.children[1].textContent;
         var ultimoPedido = this.children[2].textContent;
         var stock = this.children[4].textContent;
-
-        seleccion = "ID: " + id + ", Nombre: " + nombre + ", Pedido: " + ultimoPedido + ", Stock: " + stock;
+        var UM = this.children[5].textContent;
 
         idSpan.textContent = id;
         nombreSpan.textContent = nombre;
         pedidoSpan.textContent = ultimoPedido;
-        stockSpan.textContent = stock;
+        stockSpan.textContent = stock + " " + UM;
 
         modal.classList.add("show");
         overlay.classList.add("show");
