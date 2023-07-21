@@ -20,7 +20,8 @@ const pedidoSpan = document.querySelector("#pedido");
 const stockSpan = document.querySelector("#stock");
 const cerrar = document.querySelector(".close");
 
-var seleccionarTr = function() {
+var seleccionarTr = function(event) {
+    event.preventDefault();
     if (this.children.length > 0) {
         var id = this.children[0].textContent;
         var nombre = this.children[1].textContent;
