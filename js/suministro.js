@@ -30,6 +30,8 @@ modalButton.addEventListener('click', function (e) {
     e.preventDefault();
     modal.classList.remove("show");
     overlay.classList.remove("show");
+    console.log(idSpan);
+    console.log(nombre);
 })
 
 var seleccionarTr = function() {
