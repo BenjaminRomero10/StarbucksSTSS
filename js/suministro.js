@@ -24,7 +24,6 @@ const modalButton = document.querySelector(".modalButton");
 
 modalForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log("pito");
 })
 
 modalButton.addEventListener('click', function (e) {
