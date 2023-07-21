@@ -22,10 +22,6 @@ const cerrar = document.querySelector(".close");
 const modalForm = document.querySelector(".modalForm");
 const modalButton = document.querySelector(".modalButton");
 
-modalForm.addEventListener('submit', function (e) {
-    e.preventDefault();
-})
-
 modalButton.addEventListener('click', function (e) {
     e.preventDefault();
     modal.classList.remove("show");
