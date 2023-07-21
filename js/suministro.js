@@ -19,9 +19,19 @@ const nombreSpan = document.querySelector("#nombre");
 const pedidoSpan = document.querySelector("#pedido");
 const stockSpan = document.querySelector("#stock");
 const cerrar = document.querySelector(".close");
+const modalForm = document.querySelector(".modalForm");
+const modalButton = document.querySelector(".modalButton");
 
-var seleccionarTr = function(event) {
-    event.preventDefault();
+modalForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    console.log("pito");
+})
+
+modalButton.addEventListener('click', function (e) {
+    e.preventDefault();
+})
+
+var seleccionarTr = function() {
     if (this.children.length > 0) {
         var id = this.children[0].textContent;
         var nombre = this.children[1].textContent;
@@ -46,7 +56,7 @@ var seleccionarTr = function(event) {
             }
         }
     }
-  };
+};
 
 
 agregar.addEventListener("click", function(){
