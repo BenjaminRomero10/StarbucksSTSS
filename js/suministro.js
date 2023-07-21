@@ -35,6 +35,11 @@ var seleccionarTr = function() {
 
         modal.classList.add("show");
         overlay.classList.add("show");
+
+        for (var i = 0; i < trs.length; i++){
+            trs[i].classList.remove("seleccionable");
+            trs[i].removeEventListener("click", seleccionarTr);
+        }
     }
   };
 

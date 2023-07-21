@@ -41,7 +41,7 @@
             <form class="modalForm">
             <label for="cantidad">¿Cuánta cantidad deseas?</label>
             <input type="number" id="cantidad" min="1" max="10" value="1">
-            <button type="submit">Confirmar</button>
+            <button type="submit" class="modalButton">Confirmar</button>
             </form>
         </div>
     </div>
