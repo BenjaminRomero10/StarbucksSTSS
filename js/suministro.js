@@ -47,7 +47,7 @@ modalButton.addEventListener('click', function (e) {
 
 var seleccionarTr = function() {
     if (this.children.length > 0) {
-        var id = this.children[0].value;
+        var id = this.children[0].outerText;
         var nombre = this.children[1].textContent;
         var ultimoPedido = this.children[2].textContent;
         var fecha = this.children[3].textContent;
