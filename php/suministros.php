@@ -37,6 +37,7 @@
             <p>ID: <span id="id"></span></p>
             <p>Nombre: <span id="nombre"></span></p>
             <p>Último pedido: <span id="pedido"></span></p>
+            <p>Fecha: <span id="fecha"></span></p>
             <p>Stock: <span id="stock"></span></p>
             <form class="modalForm">
             <label for="cantidad">¿Cuánta cantidad deseas?</label>

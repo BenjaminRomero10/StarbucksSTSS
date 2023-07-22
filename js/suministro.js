@@ -17,17 +17,32 @@ const overlay = document.querySelector(".overlay");
 const idSpan = document.querySelector("#id");
 const nombreSpan = document.querySelector("#nombre");
 const pedidoSpan = document.querySelector("#pedido");
+const fechaSpan = document.querySelector("#fecha");
 const stockSpan = document.querySelector("#stock");
 const cerrar = document.querySelector(".close");
-const modalForm = document.querySelector(".modalForm");
 const modalButton = document.querySelector(".modalButton");
+let productos = [];
+
+class Producto {
+    constructor(id, nombre, ultimo, fecha, stock, UM){
+        this.id = id;
+        this.nombre = nombre;
+        this.ultimo = ultimo;
+        this.fecha = fecha;
+        this.stock = stock;
+        this.UM = UM;
+    }
+}
+
+if(!(localStorage.key(0))){
+    localStorage.setItem("Productos", JSON.stringify(productos));
+}
 
 modalButton.addEventListener('click', function (e) {
     e.preventDefault();
     modal.classList.remove("show");
     overlay.classList.remove("show");
-    console.log(idSpan);
-    console.log(nombre);
+    console.log(id);
 })
 
 var seleccionarTr = function() {
@@ -35,12 +50,14 @@ var seleccionarTr = function() {
         var id = this.children[0].textContent;
         var nombre = this.children[1].textContent;
         var ultimoPedido = this.children[2].textContent;
+        var fecha = this.children[3].textContent;
         var stock = this.children[4].textContent;
         var UM = this.children[5].textContent;
 
         idSpan.textContent = id;
         nombreSpan.textContent = nombre;
         pedidoSpan.textContent = ultimoPedido;
+        fechaSpan.textContent = fecha;
         stockSpan.textContent = stock + " " + UM;
 
         modal.classList.add("show");
