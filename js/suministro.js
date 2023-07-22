@@ -24,13 +24,12 @@ const modalButton = document.querySelector(".modalButton");
 let productos = [];
 
 class Producto {
-    constructor(id, nombre, ultimo, fecha, stock, UM){
+    constructor(id, nombre, ultimo, fecha, stock){
         this.id = id;
         this.nombre = nombre;
         this.ultimo = ultimo;
         this.fecha = fecha;
         this.stock = stock;
-        this.UM = UM;
     }
 }
 
@@ -42,12 +41,13 @@ modalButton.addEventListener('click', function (e) {
     e.preventDefault();
     modal.classList.remove("show");
     overlay.classList.remove("show");
-    console.log(id);
+    let producto = new Producto(idSpan.textContent, nombreSpan.textContent, pedidoSpan.textContent, fechaSpan.textContent, stockSpan.textContent)
+    console.log(producto);
 })
 
 var seleccionarTr = function() {
     if (this.children.length > 0) {
-        var id = (this.children[0]).textContent;
+        var id = this.children[0].textContent;
         var nombre = this.children[1].textContent;
         var ultimoPedido = this.children[2].textContent;
         var fecha = this.children[3].textContent;
