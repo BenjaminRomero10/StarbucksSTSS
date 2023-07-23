@@ -125,6 +125,17 @@ eliminar.addEventListener("click", function(){
         "<tbody>" +
         "</tbody>"
     ;
+
+    let array = JSON.parse(localStorage.getItem("Productos"));
+    for (let i = 0; i < array.length; i++) {
+        let tbody = document.querySelector("tbody");
+        tbody.innerHTML +=
+        "<tr>" +
+                `<td>${array[i].id}</td>` +
+                `<td>${array[i].nombre}</td>` +
+                `<td>${array[i].cantidad}</td>` +
+        "</tr>";
+    }
 })
 
 cerrar.addEventListener("click", function() {
