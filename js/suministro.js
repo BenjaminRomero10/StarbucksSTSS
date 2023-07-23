@@ -46,7 +46,7 @@ modalButton.addEventListener('click', function (e) {
     localStorage.setItem("Productos", JSON.stringify(nuevalista))
 
     Toastify({
-        text: "Item agregado a la lista",
+        text: "Item agregado a la lista :)",
         duration: 2500,
         close: false,
         gravity: "top",
@@ -95,7 +95,7 @@ agregar.addEventListener("click", function(){
         }
     } else {
         Toastify({
-            text: "No hay items en la tabla:(",
+            text: "No hay items en la tabla :(",
             duration: 2500,
             close: false,
             gravity: "top",
@@ -112,6 +112,20 @@ agregar.addEventListener("click", function(){
         }
     }
 });
+
+eliminar.addEventListener("click", function(){
+    document.querySelector("table").innerHTML =
+        "<thead>" +
+            "<tr>" +
+                "<th>ID</th>" +
+                "<th>Nombre</th>" +
+                "<th>Cantidad a solicitar</th>" +
+            "</tr>" +
+        "</thead>" +
+        "<tbody>" +
+        "</tbody>"
+    ;
+})
 
 cerrar.addEventListener("click", function() {
     modal.classList.remove("show");
