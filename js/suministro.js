@@ -44,6 +44,16 @@ modalButton.addEventListener('click', function (e) {
     let nuevalista = JSON.parse(localStorage.getItem("Productos"))
     nuevalista.push(producto);
     localStorage.setItem("Productos", JSON.stringify(nuevalista))
+
+    Toastify({
+        text: "Item agregado a la lista",
+        duration: 2500,
+        close: false,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "#1e3932",
+        stopOnFocus: false,
+    }).showToast();
 })
 
 var seleccionarTr = function() {
