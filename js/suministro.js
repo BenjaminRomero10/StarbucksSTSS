@@ -24,12 +24,10 @@ const modalButton = document.querySelector(".modalButton");
 let productos = [];
 
 class Producto {
-    constructor(id, nombre, ultimo, fecha, stock){
+    constructor(id, nombre, cantidad){
         this.id = id;
         this.nombre = nombre;
-        this.ultimo = ultimo;
-        this.fecha = fecha;
-        this.stock = stock;
+        this.cantidad = cantidad;
     }
 }
 
@@ -41,7 +39,8 @@ modalButton.addEventListener('click', function (e) {
     e.preventDefault();
     modal.classList.remove("show");
     overlay.classList.remove("show");
-    let producto = new Producto(idSpan.textContent, nombreSpan.textContent, pedidoSpan.textContent, fechaSpan.textContent, stockSpan.textContent)
+    let cantidad = document.querySelector("#cantidad").valueAsNumber;
+    let producto = new Producto(idSpan.textContent, nombreSpan.textContent, cantidad);
     let nuevalista = JSON.parse(localStorage.getItem("Productos"))
     nuevalista.push(producto);
     localStorage.setItem("Productos", JSON.stringify(nuevalista))
