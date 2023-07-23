@@ -42,7 +42,9 @@ modalButton.addEventListener('click', function (e) {
     modal.classList.remove("show");
     overlay.classList.remove("show");
     let producto = new Producto(idSpan.textContent, nombreSpan.textContent, pedidoSpan.textContent, fechaSpan.textContent, stockSpan.textContent)
-    console.log(producto);
+    let nuevalista = JSON.parse(localStorage.getItem("Productos"))
+    nuevalista.push(producto);
+    localStorage.setItem("Productos", JSON.stringify(nuevalista))
 })
 
 var seleccionarTr = function() {
