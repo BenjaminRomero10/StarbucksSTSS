@@ -122,6 +122,17 @@ var borrarTr = function() {
                 backgroundColor: "#1e3932",
                 stopOnFocus: false,
             }).showToast();
+
+            let arr = JSON.parse(localStorage.getItem("Productos"));
+            for (let i = 0; i < arr.length; i++) {
+                let tbody = document.querySelector("tbody");
+                tbody.innerHTML +=
+                "<tr>" +
+                        `<td>${arr[i].id}</td>` +
+                        `<td>${arr[i].nombre}</td>` +
+                        `<td>${arr[i].cantidad}</td>` +
+                "</tr>";
+            }
         }
       })
 }
@@ -194,7 +205,7 @@ eliminar.addEventListener("click", function(){
         "</tbody>";
 
         tableListView = true;
-        
+
         let array = JSON.parse(localStorage.getItem("Productos"));
         for (let i = 0; i < array.length; i++) {
             let tbody = document.querySelector("tbody");

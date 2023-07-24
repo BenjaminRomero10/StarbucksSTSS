@@ -41,7 +41,7 @@
             <p>Stock: <span id="stock"></span></p>
             <form class="modalForm">
             <label for="cantidad">¿Cuánta cantidad deseas?</label>
-            <input type="number" id="cantidad" min="1" value="5">
+            <input type="number" id="cantidad" min="1" value="1">
             <button type="submit" class="modalButton">Confirmar</button>
             </form>
         </div>
