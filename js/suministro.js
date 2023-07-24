@@ -97,10 +97,9 @@ var borrarTr = function() {
       }).then((result) => {
         if (result.isConfirmed) {
             let array = JSON.parse(localStorage.getItem("Productos"))
+            let newArray = []
             for (let i = 0; i < array.length; i++) {
-                if (array[i].nombre = name){
-                    var newArray = array.filter(producto => producto.name != array[i].nombre);
-                }
+                if (array[i].nombre != name) newArray.push(array[i]);  
             }
 
             localStorage.setItem("Productos", JSON.stringify(newArray));
@@ -204,7 +203,7 @@ eliminar.addEventListener("click", function(){
                     `<td>${array[i].cantidad}</td>` +
             "</tr>";
         }
-        
+
         const trs = document.querySelectorAll("tbody tr");
         if (trs.length > 0){
             for (var i = 0; i < trs.length; i++){
