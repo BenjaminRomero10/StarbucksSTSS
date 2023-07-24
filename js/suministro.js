@@ -124,8 +124,10 @@ var borrarTr = function() {
             }).showToast();
 
             let arr = JSON.parse(localStorage.getItem("Productos"));
+            let tbody = document.querySelector("tbody");
+            tbody.innerHTML = "";
+            
             for (let i = 0; i < arr.length; i++) {
-                let tbody = document.querySelector("tbody");
                 tbody.innerHTML +=
                 "<tr>" +
                         `<td>${arr[i].id}</td>` +
