@@ -1,6 +1,25 @@
 $(".navOption").on("click", function(event) {
     event.preventDefault();
 
+    if (tableListView) {
+      $("table").html(
+        "<thead>" +
+          "<tr>" +
+            "<th>ID</th>" +
+            "<th>Nombre</th>" +
+            "<th>Ultimo Pedido</th>" +
+            "<th>Fecha</th>" +
+            "<th>Stock</th>" +
+            "<th>Unidad Medida</th>" +
+          "</tr>" +
+        "</thead>" +
+        "<tbody>" +
+        "</tbody>"
+      );
+  
+      tableListView = false;
+    }
+    
     var accion = $(this).data("accion");
     
     // Enviar una petición AJAX al archivo php con los datos
