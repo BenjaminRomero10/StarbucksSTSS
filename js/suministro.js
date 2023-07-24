@@ -22,6 +22,7 @@ const stockSpan = document.querySelector("#stock");
 const cerrar = document.querySelector(".close");
 const modalButton = document.querySelector(".modalButton");
 let productos = [];
+let tableListView = false;
 
 class Producto {
     constructor(id, nombre, cantidad){
@@ -85,36 +86,104 @@ var seleccionarTr = function() {
     }
 };
 
+var borrarTr = function() {
+    var name = this.children[1].textContent;
+    Swal.fire({
+        title: `Estás a punto de borrar el producto:\n${name}`,
+        showDenyButton: true,
+        confirmButtonText: 'Borrar',
+        confirmButtonColor: '#006241',
+        denyButtonText: `No borrar`,
+      }).then((result) => {
+        if (result.isConfirmed) {
+            let array = JSON.parse(localStorage.getItem("Productos"))
+            for (let i = 0; i < array.length; i++) {
+                if (array[i].nombre = name){
+                    var newArray = array.filter(producto => producto.name != array[i].nombre);
+                }
+            }
+
+            localStorage.setItem("Productos", JSON.stringify(newArray));
+
+            const trs = document.querySelectorAll("tbody tr");
+
+            if (trs.length > 0){
+                for (var i = 0; i < trs.length; i++){
+                    trs[i].classList.remove("seleccionable");
+                    trs[i].removeEventListener("click", borrarTr);
+                }
+            }
+
+            Toastify({
+                text: "Item eliminado de la lista :)",
+                duration: 2500,
+                close: false,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#1e3932",
+                stopOnFocus: false,
+            }).showToast();
+        }
+      })
+}
 
 agregar.addEventListener("click", function(){
-    const trs = document.querySelectorAll("tbody tr");
-    if (trs.length > 0){
-        for (var i = 0; i < trs.length; i++){
-            trs[i].classList.add("seleccionable");
-            trs[i].addEventListener("click", seleccionarTr);
-        }
-    } else {
-        Toastify({
-            text: "No hay items en la tabla :(",
-            duration: 2500,
-            close: false,
-            gravity: "top",
-            position: "right",
-            backgroundColor: "#A62E2E",
-            stopOnFocus: false,
-        }).showToast();
+    if (tableListView){
+        document.querySelector("table").innerHTML =
+        "<thead>" +
+            "<tr>" +
+                "<th>ID</th>" +
+                "<th>Nombre</th>" +
+                "<th>Ultimo Pedido</th>" +
+                "<th>Fecha</th>" +
+                "<th>Stock</th>" +
+                "<th>Unidad Medida</th>" +
+            "</tr>" +
+        "</thead>" +
+        "<tbody>" +
+        "</tbody>";
 
-        for (var i = 0; i < trs.length; i++) {
-            if (i < trs.length) {
-                trs[i].classList.remove("seleccionable");
-                trs[i].removeEventListener("click", seleccionarTr);
+        tableListView = false;
+
+    } else {
+        const trs = document.querySelectorAll("tbody tr");
+        if (trs.length > 0){
+            for (var i = 0; i < trs.length; i++){
+                trs[i].classList.add("seleccionable");
+                trs[i].addEventListener("click", seleccionarTr);
+            }
+        } else {
+            Toastify({
+                text: "No hay items en la tabla :(",
+                duration: 2500,
+                close: false,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#A62E2E",
+                stopOnFocus: false,
+            }).showToast();
+
+            for (var i = 0; i < trs.length; i++) {
+                if (i < trs.length) {
+                    trs[i].classList.remove("seleccionable");
+                    trs[i].removeEventListener("click", seleccionarTr);
+                }
             }
         }
-    }
+        }
 });
 
 eliminar.addEventListener("click", function(){
-    document.querySelector("table").innerHTML =
+    if (tableListView){
+        const trs = document.querySelectorAll("tbody tr");
+        if (trs.length > 0){
+            for (var i = 0; i < trs.length; i++){
+                trs[i].classList.add("seleccionable");
+                trs[i].addEventListener("click", borrarTr);
+            }
+        }
+    } else {
+        document.querySelector("table").innerHTML =
         "<thead>" +
             "<tr>" +
                 "<th>ID</th>" +
@@ -123,18 +192,73 @@ eliminar.addEventListener("click", function(){
             "</tr>" +
         "</thead>" +
         "<tbody>" +
-        "</tbody>"
-    ;
+        "</tbody>";
 
-    let array = JSON.parse(localStorage.getItem("Productos"));
-    for (let i = 0; i < array.length; i++) {
-        let tbody = document.querySelector("tbody");
-        tbody.innerHTML +=
-        "<tr>" +
-                `<td>${array[i].id}</td>` +
-                `<td>${array[i].nombre}</td>` +
-                `<td>${array[i].cantidad}</td>` +
-        "</tr>";
+        let array = JSON.parse(localStorage.getItem("Productos"));
+        for (let i = 0; i < array.length; i++) {
+            let tbody = document.querySelector("tbody");
+            tbody.innerHTML +=
+            "<tr>" +
+                    `<td>${array[i].id}</td>` +
+                    `<td>${array[i].nombre}</td>` +
+                    `<td>${array[i].cantidad}</td>` +
+            "</tr>";
+        }
+        
+        const trs = document.querySelectorAll("tbody tr");
+        if (trs.length > 0){
+            for (var i = 0; i < trs.length; i++){
+                trs[i].classList.add("seleccionable");
+                trs[i].addEventListener("click", borrarTr);
+            }
+        }
+    }
+    
+});
+
+lista.addEventListener("click", function(){
+    if (tableListView){
+        document.querySelector("table").innerHTML =
+        "<thead>" +
+            "<tr>" +
+                "<th>ID</th>" +
+                "<th>Nombre</th>" +
+                "<th>Ultimo Pedido</th>" +
+                "<th>Fecha</th>" +
+                "<th>Stock</th>" +
+                "<th>Unidad Medida</th>" +
+            "</tr>" +
+        "</thead>" +
+        "<tbody>" +
+        "</tbody>";
+
+        tableListView = false;
+
+    } else{
+        document.querySelector("table").innerHTML =
+        "<thead>" +
+            "<tr>" +
+                "<th>ID</th>" +
+                "<th>Nombre</th>" +
+                "<th>Cantidad a solicitar</th>" +
+            "</tr>" +
+        "</thead>" +
+        "<tbody>" +
+        "</tbody>";
+
+        let array = JSON.parse(localStorage.getItem("Productos"));
+        for (let i = 0; i < array.length; i++) {
+            let tbody = document.querySelector("tbody");
+            tbody.innerHTML +=
+            "<tr>" +
+                    `<td>${array[i].id}</td>` +
+                    `<td>${array[i].nombre}</td>` +
+                    `<td>${array[i].cantidad}</td>` +
+            "</tr>";
+    }
+
+    tableListView = true;
+
     }
 })
 
