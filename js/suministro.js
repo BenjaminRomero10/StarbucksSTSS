@@ -193,6 +193,8 @@ eliminar.addEventListener("click", function(){
         "<tbody>" +
         "</tbody>";
 
+        tableListView = true;
+        
         let array = JSON.parse(localStorage.getItem("Productos"));
         for (let i = 0; i < array.length; i++) {
             let tbody = document.querySelector("tbody");
