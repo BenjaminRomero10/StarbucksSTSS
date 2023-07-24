@@ -1,13 +1,3 @@
-// Toastify({
-//     text: "¡Item agregado a la lista!",
-//     duration: 2500,
-//     close: false,
-//     gravity: "top",
-//     position: "right",
-//     backgroundColor: "#1e3932",
-//     stopOnFocus: false,
-// }).showToast();
-
 const agregar = document.querySelector(".agregar");
 const eliminar = document.querySelector(".eliminar");
 const lista = document.querySelector(".lista");
@@ -21,6 +11,7 @@ const fechaSpan = document.querySelector("#fecha");
 const stockSpan = document.querySelector("#stock");
 const cerrar = document.querySelector(".close");
 const modalButton = document.querySelector(".modalButton");
+const navOption = document.querySelectorAll(".navOption");
 let productos = [];
 let tableListView = false;
 
@@ -126,7 +117,7 @@ var borrarTr = function() {
             let arr = JSON.parse(localStorage.getItem("Productos"));
             let tbody = document.querySelector("tbody");
             tbody.innerHTML = "";
-            
+
             for (let i = 0; i < arr.length; i++) {
                 tbody.innerHTML +=
                 "<tr>" +
@@ -285,3 +276,23 @@ overlay.addEventListener("click", function() {
     modal.classList.remove("show");
     overlay.classList.remove("show");
 });
+
+navOption.addEventListener("click", function(){
+    if(tableListView){
+        document.querySelector("table").innerHTML =
+        "<thead>" +
+            "<tr>" +
+                "<th>ID</th>" +
+                "<th>Nombre</th>" +
+                "<th>Ultimo Pedido</th>" +
+                "<th>Fecha</th>" +
+                "<th>Stock</th>" +
+                "<th>Unidad Medida</th>" +
+            "</tr>" +
+        "</thead>" +
+        "<tbody>" +
+        "</tbody>";
+
+        tableListView = false;
+    }
+})
