@@ -276,3 +276,26 @@ overlay.addEventListener("click", function() {
     modal.classList.remove("show");
     overlay.classList.remove("show");
 });
+
+for (let i = 0; i < navOption.length; i++) {
+    navOption[i].addEventListener("click", function(){
+        if (tableListView) {
+            $("table").html(
+              "<thead>" +
+                "<tr>" +
+                  "<th>ID</th>" +
+                  "<th>Nombre</th>" +
+                  "<th>Ultimo Pedido</th>" +
+                  "<th>Fecha</th>" +
+                  "<th>Stock</th>" +
+                  "<th>Unidad Medida</th>" +
+                "</tr>" +
+              "</thead>" +
+              "<tbody>" +
+              "</tbody>"
+            );
+            tableListView = false;
+          }
+    })
+}
+
