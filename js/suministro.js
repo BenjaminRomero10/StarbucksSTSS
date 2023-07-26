@@ -330,3 +330,27 @@ overlay.addEventListener("click", function() {
     modal.classList.remove("show");
     overlay.classList.remove("show");
 });
+
+pedir.addEventListener("click", function(){
+    let array = JSON.parse(localStorage.getItem("Productos"));
+    if(array.length < 1){
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: '¡No tienes items en lista para 	solicitar!',
+            confirmButtonText: "Entendido",
+            confirmButtonColor: '#006241'
+          })
+    } else {
+        Swal.fire({
+            icon: 'success',
+            title: 'Items solicitados',
+            text: '¡Gracias por confiar en nosotros!',
+            confirmButtonText: "Entendido",
+            confirmButtonColor: '#006241',
+            timer: 3500,
+            timerProgressBar: true
+          })
+        localStorage.setItem("Productos", "[]")
+    }
+})
