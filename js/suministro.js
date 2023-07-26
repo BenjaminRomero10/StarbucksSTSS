@@ -27,6 +27,28 @@ if(!(localStorage.key(0))){
     localStorage.setItem("Productos", JSON.stringify(productos));
 }
 
+for (let i = 0; i < navOption.length; i++) {
+    navOption[i].addEventListener("click", function(){
+        if (tableListView) {
+            $("table").html(
+              "<thead>" +
+                "<tr>" +
+                  "<th>ID</th>" +
+                  "<th>Nombre</th>" +
+                  "<th>Ultimo Pedido</th>" +
+                  "<th>Fecha</th>" +
+                  "<th>Stock</th>" +
+                  "<th>Unidad Medida</th>" +
+                "</tr>" +
+              "</thead>" +
+              "<tbody>" +
+              "</tbody>"
+            );
+            tableListView = false;
+          }
+    })
+}
+
 modalButton.addEventListener('click', function (e) {
     e.preventDefault();
     modal.classList.remove("show");
@@ -34,47 +56,79 @@ modalButton.addEventListener('click', function (e) {
     let cantidad = document.querySelector("#cantidad").valueAsNumber;
     let producto = new Producto(idSpan.textContent, nombreSpan.textContent, cantidad);
     let nuevalista = JSON.parse(localStorage.getItem("Productos"))
-    nuevalista.push(producto);
-    localStorage.setItem("Productos", JSON.stringify(nuevalista))
+    let existente = false;
+    let indice;
+    for (let i = 0; i < nuevalista.length; i++) {
+        if (nuevalista[i].nombre == producto.nombre) {
+            existente = true;
+            indice = i;
+        }
+    }
 
-    Toastify({
-        text: "Item agregado a la lista :)",
-        duration: 2500,
-        close: false,
-        gravity: "top",
-        position: "right",
-        backgroundColor: "#1e3932",
-        stopOnFocus: false,
-    }).showToast();
+    if (existente) {
+        Swal.fire({
+            title: `Este producto ya existe en la lista de items ¿Deseas agregar más?`,
+            showDenyButton: true,
+            confirmButtonText: 'Agregar',
+            confirmButtonColor: '#006241',
+            denyButtonText: `No agregar`,
+          }).then((result) => {
+            if (result.isConfirmed) {
+                nuevalista[indice].cantidad += cantidad;
+                localStorage.setItem("Productos", JSON.stringify(nuevalista))
+                Toastify({
+                    text: "Item agregado a la lista :)",
+                    duration: 2500,
+                    close: false,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#1e3932",
+                    stopOnFocus: false,
+                }).showToast();
+            }
+          })
+    } else {
+        nuevalista.push(producto);
+        localStorage.setItem("Productos", JSON.stringify(nuevalista))
+
+        Toastify({
+            text: "Item agregado a la lista :)",
+            duration: 2500,
+            close: false,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "#1e3932",
+            stopOnFocus: false,
+        }).showToast();
+    }
 })
 
 var seleccionarTr = function() {
-    if (this.children.length > 0) {
-        var id = this.children[0].textContent;
-        var nombre = this.children[1].textContent;
-        var ultimoPedido = this.children[2].textContent;
-        var fecha = this.children[3].textContent;
-        var stock = this.children[4].textContent;
-        var UM = this.children[5].textContent;
+    var id = this.children[0].textContent;
+    var nombre = this.children[1].textContent;
+    var ultimoPedido = this.children[2].textContent;
+    var fecha = this.children[3].textContent;
+    var stock = this.children[4].textContent;
+    var UM = this.children[5].textContent;
 
-        idSpan.textContent = id;
-        nombreSpan.textContent = nombre;
-        pedidoSpan.textContent = ultimoPedido;
-        fechaSpan.textContent = fecha;
-        stockSpan.textContent = stock + " " + UM;
+    idSpan.textContent = id;
+    nombreSpan.textContent = nombre;
+    pedidoSpan.textContent = ultimoPedido;
+    fechaSpan.textContent = fecha;
+    stockSpan.textContent = stock + " " + UM;
 
-        modal.classList.add("show");
-        overlay.classList.add("show");
+    modal.classList.add("show");
+    overlay.classList.add("show");
 
-        const trs = document.querySelectorAll("tbody tr");
+    const trs = document.querySelectorAll("tbody tr");
 
-        if (trs.length > 0){
-            for (var i = 0; i < trs.length; i++){
-                trs[i].classList.remove("seleccionable");
-                trs[i].removeEventListener("click", seleccionarTr);
-            }
+    if (trs.length > 0){
+        for (var i = 0; i < trs.length; i++){
+            trs[i].classList.remove("seleccionable");
+            trs[i].removeEventListener("click", seleccionarTr);
         }
     }
+    
 };
 
 var borrarTr = function() {
@@ -276,26 +330,3 @@ overlay.addEventListener("click", function() {
     modal.classList.remove("show");
     overlay.classList.remove("show");
 });
-
-for (let i = 0; i < navOption.length; i++) {
-    navOption[i].addEventListener("click", function(){
-        if (tableListView) {
-            $("table").html(
-              "<thead>" +
-                "<tr>" +
-                  "<th>ID</th>" +
-                  "<th>Nombre</th>" +
-                  "<th>Ultimo Pedido</th>" +
-                  "<th>Fecha</th>" +
-                  "<th>Stock</th>" +
-                  "<th>Unidad Medida</th>" +
-                "</tr>" +
-              "</thead>" +
-              "<tbody>" +
-              "</tbody>"
-            );
-            tableListView = false;
-          }
-    })
-}
-
