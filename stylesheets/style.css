@@ -3,11 +3,13 @@
 
 :root{
     --starbucks-green: #006241;
+    --starbucks-green2: #146349;
     --starbucks-house: rgb(30, 57, 50);
     --border: #ccc;
     --font: 'Secular One', sans-serif;
     --font2: 'Hind Madurai', sans-serif;
     --text-color: #1E3932;
+    --text-color2:#5c677d;
     --button-color: var(--starbucks-green);
     --button-hover: #0B7E53;
     --button-font: 'Hind Madurai', sans-serif;
@@ -491,10 +493,12 @@ section h2{
     overflow-y: scroll;
     height: 22rem;
 }
+
 td, th{
     border: 1px solid var(--border);
     text-align: center;
 }
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -618,54 +622,376 @@ th{
 
 /* QUIENES SOMOS */
 
-.quienesSomos{
-    padding: 5%;
- }
- .quienesSomos h1{
-    padding: 1%;
-    font-size: 35px;
-    text-align: center;
- }
- .quienesSomos h2{
-    font-weight: lighter;
-    text-align: justify;
- }
- .quienesSomos h3{
-    font-size: 28px;
-    font-weight: bolder;
-    color: #1E3932;
- }
- .quienesSomos h4{
-    text-align: justify;
-    font-weight: lighter;
- }
- 
- .figuras{
+.text-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto;
- }
- figure img {
-    object-position: 0%;
-    max-width: 250px;
-    height: auto;
-    border: 1px solid #000000;
-    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.3);
-    border-radius: 50%;
- }
- figcaption{
-    display: block;
-    font-weight: 100;
-    font-size: 18px;
-    text-align: center;
- }
- .upc img{
-    display: block;
-    margin: 0 auto;
-    width: 30%;
- }
+    justify-content: center;
+}
 
+.container_about .AboutUs {
+    display: flex;
+    flex-direction: row;
+    margin-block: 4rem;
+    align-items: center; 
+}
+
+.AboutUs{
+    border-style:none;
+}
+.container_about .AboutUs .text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+}
+    
+.container_about .AboutUs h1 {
+    font-size: 1rem;
+    color:var(--text-color2);
+    font-weight: lighter;
+    margin: 1rem 0rem 0 14rem;
+    text-align: left;
+}
+
+.container_about .AboutUs h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: justify;
+    margin: 1rem 0rem 0 14rem;
+}
+    
+.container_about .AboutUs p {
+    text-align: justify;
+    color: var(--text-color2);
+    line-height: 1.5rem;
+    font-weight:normal;
+    font-size: 1rem;
+    margin: 1rem 0rem 0 14rem;
+}
+    
+.container_about .AboutUs img{
+    height: auto; 
+    width: 25%; 
+    align-self: center; 
+    margin-right: 10vw; 
+    margin-left: 5vw;
+} 
+
+.button-82-pushable {
+    margin-top: 2rem;
+    margin-left: 14rem;
+    position:relative;
+    border: none;
+    background: linear-gradient(145deg, #c9c9c9, #f0f0f0);
+    width: 40%;
+    padding: 0;
+    cursor: pointer;
+    outline-offset: 4px;
+    transition: filter 250ms, transform 150ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    box-shadow: 5px 5px 15px #bebebe, -5px -5px 15px #ffffff;
+    border-radius: 10px;
+}
+
+.button-82-shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: hsl(0deg 0% 0% / 0.25);
+    will-change: transform;
+    transform: translateY(2px);
+    transition:transform
+        600ms
+        cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background: linear-gradient(
+        to left,
+        var(--starbucks-house) 0%,
+        var(--starbucks-house) 8%,
+        var(--starbucks-house) 92%,
+        var(--starbucks-house) 100%
+  );
+}
+
+.button-82-front {
+    display: block;
+    position: relative;
+    padding: 12px 27px;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    color: white;
+    background: var(--starbucks-green2);
+    will-change: transform;
+    transform: translateY(-4px);
+    transition:
+        transform
+        600ms
+        cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-pushable:hover {
+    filter: brightness(110%);
+    -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+    transform: translateY(-6px);
+    transition:
+        transform
+        250ms
+        cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+    transform: translateY(4px);
+    transition:
+        transform
+        250ms
+        cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.text-container2 {
+    background-color: #f3f5fa;
+    border-radius: 0%;
+    border-color: #f3f5fa;
+    place-items: center; 
+  }
+  
+.text-container2 .hola {
+    display: flex;
+    flex-direction: row;
+}
+  
+.hola {
+    margin-top: 7rem;
+    margin-bottom: 4rem;
+}
+  
+.text-container2 .hola h2 {
+    font-size: 1.7rem;
+    text-align: justify;
+    margin-left: 12%; 
+    margin-top: 0.5rem;
+}
+  
+.text-container2 .hola p {
+    font-size: 1rem;
+    text-align: justify;
+    margin-right: 12%; 
+    margin-left: 3%; 
+    width: 100%;
+    color: var(--text-color2);
+}
+  
+.v-line {
+    border-top: 1px solid var(--starbucks-house);
+    height: 2px;
+    max-width:80%;
+    margin: 20px auto 0 auto;
+}
+   
+.cartas{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 5rem;  
+    place-items: center; 
+}
+.carta1, .carta2, .carta3 {
+    padding: 1rem; 
+    margin-inline: 2rem;
+    border-radius: 26px;
+    background: #f3f5fa;
+    width: 80%;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+.carta1 p, .carta2 p, .carta3 p {
+    color: var(--text-color2);
+    text-align: center
+}
+.carta1 h3, .carta2 h3, .carta3 h3 {
+    font-weight: bolder;
+    text-align: center
+}
+
+.story {
+    display: grid;
+    margin: 5%; 
+    border-style: none;
+    place-items: center; 
+    align-items: center;
+}  
+.text-container3{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.text-container3 h3{
+    font-size: 1rem;
+    text-align: left;
+    color: var(--text-color2);
+    margin-left: 2rem;
+    margin-left: 0;
+}
+.text-container3 h4{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.text-container3 p {
+    font-size: 1rem;
+    text-align: center;
+    color: var(--text-color2);
+    margin: 0 16rem 0 16rem;
+    max-width: 800px; 
+}
+.gallery{
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    margin-top: 2rem;
+}
+.galleryItem{
+    scroll-snap-align: center;
+    min-width: 50%;
+}
+.galleryImage{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1%;
+}
+
+.Founders{
+    display: grid;
+    border: none;
+    justify-content: center;
+    margin: 2rem 0 0 0;
+    background-color: #f3f5fa;
+    border-radius: 0%;
+    border-color: #f3f5fa;
+}
+.text-container4{
+    align-items: center;
+    margin: 2rem 0 0rem 0;    
+}
+.text-container4 h3{
+    font-size: 1rem;
+    text-align: center;
+    color: var(--text-color2);
+}
+.text-container4 h4{
+    font-size: 1.9rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.Team{
+    display: grid;
+    grid-template-columns: repeat(2, 30rem);
+    margin: 2rem;   
+    place-items: center; 
+} 
+
+.cardTeam{
+    align-items: center;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    transition: all 0.8s ease;
+    display: flex;
+    flex-direction: column;
+    width: 20rem;
+    height: 30rem;  
+}
+  
+.cardTeam:hover{
+    transform: rotateY(180deg);
+}
+  
+.thefront{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    backface-visibility: hidden;
+    overflow: hidden;
+    background: #f8f9fa;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.theback{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    backface-visibility: hidden;
+    background: var(--text-color2r);
+    text-align: center;
+    transform: rotateY(180deg);
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+  
+.thefront h5, .theback h5{
+    margin: 2rem;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--text-color);
+}
+
+.theback .bx{
+    margin-bottom: 2rem;
+}
+
+.thefront img{
+    width: 75%; 
+    height: auto; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+}
+  
+.thefront p, .theback p{
+    margin: 2rem;
+    font-weight: normal;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--text-color2);
+}
+
+.icon{
+    font-size: 2rem;
+    color:#006241;
+}
+  
 /* MISION */
 .mision {
     padding: 20px;
@@ -816,170 +1142,148 @@ th{
     box-shadow: none;
 }
 
-/* ABOUT US */
-      
-.container_about{
-    margin: 8rem;
-}
-
-.container_about .AboutUs {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.container_about .AboutUs .text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-}
-    
-.container_about .AboutUs h1 {
-    font-size: 2rem;
-    color:#006241;
-    font-weight: bold;
-}
-    
-.container_about .AboutUs p {
-    text-align: justify;
-    line-height: 2rem;
-    font-size: 15px;
-    margin: 2rem 0;
-}
-    
-.container_about .AboutUs img{
-    margin-left: 2rem;
-    height: 400px;
-    width: 800px;     
-}       
-
-.sub-container{
-    max-width: 1200px;
-    margin: auto;
-    padding: 48px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.teams{
-    margin: 10px;
-    padding:22px;
-    max-width: 30%;
-    cursor: pointer;
-    transition: 0.4s;
-    box-sizing: border-box;
-}
-
-.teams:hover{
-    background:#e7e7e7;
-}
-
-.teams img{
-    display: block;
-    margin: auto;
-    width: 200px;
-    height: 200px;
-}
-
-.name{
-    padding:12px;
-    font-weight: bold;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: #006241;
-}
-
-.desig{
-    font-style: italic;
-    color:dimgray
-}
-
-.about{
-    margin: 20px 0;
-    font-weight:normal;
-    color:#000000;
-}
-
-.social-links a{
-    display:inline-block;
-    height: 30px;
-    width: 30px;
-    transition: .4s;
-}
-
-.social-links a i{
-    color:#006241
-}      
-
-.container_about {
-    text-align: center;
-}
-
-.sub-container{
-    max-width: 1200px;
-    margin: auto;
-    padding: 48px 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding-top: 100px;
-}
-
-.teams{
-    margin: 10px;
-    padding:22px;
-    max-width: 30%;
-    cursor: pointer;
-    transition: 0.4s;
-    box-sizing: border-box;
-}
-
-.teams:hover{
-    background:#e7e7e7;
-}
-
-.teams img{
-    display: block;
-    margin: auto;
-    width: 200px;
-    height: 200px;
-}
-
-.name{
-    padding:12px;
-    font-weight: bold;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: #006241;
-}
-
-.desig{
-    font-style: italic;
-    color:dimgray
-}
-
-.about{
-    margin: 20px 0;
-    font-weight:normal;
-    color:#000000;
-}
-
-.social-links a{
-    display:inline-block;
-    height: 30px;
-    width: 30px;
-    transition: .4s;
-}
-
-.social-links a i{
-    color:#006241
-}
-
-
 /* RESPONSIVE */
+
+@media (max-width: 1024px) {
+
+    .text-container4{
+        margin: 2rem 2rem 0 2rem;
+    }
+
+    .text-container4 .Founders {
+        flex-direction: column; 
+        align-items: center; 
+    }
+  
+    .text-container4 .Founders h3 {
+        margin-left: 0; 
+    }
+  
+    .text-container4 .Founders h4 {
+        margin-right: 0; 
+        margin-left: 0; 
+    }
+  
+    .Team{
+        grid-template-columns: repeat(1,1fr); 
+        grid-gap: 0; 
+        margin: 0;
+        margin-bottom: 2rem;
+        margin-inline: 1rem;
+        align-items: center;
+    }
+
+    .cardTeam{
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    .thefront{
+        width: 80%; 
+        height: 100%;
+        margin: 1rem;
+    }
+
+    .theback{
+        width: 80%; 
+        height: 100%;
+    }
+
+    .thefront h5, .theback h5{
+        margin: 2rem 0 0 0;
+    }
+
+    .thefront p, .theback p{
+        margin: 1rem;
+    }
+
+    .icon{
+        font-size: 1.5rem;
+        color:#006241;
+    }
+
+    .text-container3 h3 {
+        font-size: 0.8rem; 
+    }
+
+    .text-container3 p {
+        margin: 0 2rem 0 2rem;
+    }
+
+    .text-container2 .hola {
+        flex-direction: column; 
+        align-items: center; 
+        margin: 2rem;
+    }
+    
+    .text-container2 .hola h2 {
+        margin-left: 0; 
+        margin-bottom: 1rem;
+    }
+    
+    .text-container2 .hola p {
+        margin-right: 0; 
+        margin-left: 0; 
+    }
+    
+    .cartas {
+         grid-template-columns: repeat(1,1fr); 
+         grid-gap:40px; 
+    }
+    
+    .container_about .AboutUs {
+        margin: 0 1rem 0 1rem;
+        flex-direction: column; 
+        text-align: justify;
+        align-items: stretch; 
+    }
+
+    .text-container{
+        align-items: center;
+    }
+  
+    .container_about .AboutUs h1 {
+        margin-left: 0; 
+        text-align: center; 
+        margin-top: 1rem; 
+        margin-bottom: 0.5rem; 
+    }
+  
+    .container_about .AboutUs h2 {
+        margin-left: 0; 
+        text-align: center; 
+        margin-top: 0.5rem; 
+        margin-bottom: 0.5rem; 
+    }
+  
+    .container_about .AboutUs p {
+        margin-left: 0; 
+        text-align: justify; 
+        margin-top: 0.5rem; 
+        margin-bottom: 0.5rem;
+        padding-left: 1rem; 
+        padding-right: 1rem; 
+    }
+  
+    .container_about .AboutUs img {
+        width: 80vw; 
+        margin-top: 1rem; 
+        margin-right: 4rem;
+        margin-bottom: 1rem; 
+    }
+
+    .button-82-pushable {
+        place-items: center; 
+        width: 40vw;
+        font-size: 1.25rem;
+        margin-left: 0;
+        text-align: center; 
+        margin-top: 2rem; 
+        margin-bottom: 0.5rem;
+    }
+}
 
 @media only screen and (width <= 768px) {
     *{
