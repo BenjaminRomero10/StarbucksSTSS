@@ -128,8 +128,7 @@
                 <p class="title">SOBRE NOSOTROS</p>
                 <ul>
                     <li><a href="quienesSomos.html">QUIENES SOMOS</a></li>
-                    <li><a href="mision.html">NUESTRA MISION</a></li>
-                    <li><a href="vision.html">NUESTRA VISION</a></li>
+                    <li><a href="../pages/misionVision.html">NUESTRA MISION Y VISION</a></li>
                 </ul>
             </div>
             <div class="contact">
